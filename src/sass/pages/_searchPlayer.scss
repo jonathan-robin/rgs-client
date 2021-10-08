@@ -1,0 +1,39 @@
+.hidden{
+    visibility:hidden;
+}
+.grid__player--match-list{
+    // background:red;
+    width:100%;
+}
+.content__player{ 
+    justify-content: center;
+    display:flex;
+    margin:auto;
+    width:80vw !important;
+    max-width:900px;
+    justify-content: space-evenly !important;
+}
+
+.content__player--info, .content__player--sum{ 
+}
+.content__player--info{
+
+}
+.filter{ 
+    cursor:pointer;
+}
+.grid__search-player{ 
+    display:grid;
+    grid-template-columns: repeat(8,1fr);
+    // width:100% !important;
+}
+
+.button.button__player{
+    margin-left:0 !important;
+}
+.content__player--match{
+} 
+.content__player-match--win{ 
+    background: $green-linear__Match--victoire;
+
+}

@@ -1,0 +1,41 @@
+.bubble{
+    border-radius:25px;
+    box-shadow:$boxShadow__button--small;
+    padding:1vw;
+    max-height:55px !important;
+    margin-top:25px!important;
+    @include media('>=laptop'){
+        padding:8px 5px;
+    }
+}
+
+.bubble__search-year__info{
+    max-width:500px !important; 
+    margin:auto !important;
+}
+
+.bubble__search-year__info--edition, 
+.bubble__search-year__info--tour{
+
+    background:$orange-linear__Button;
+    color:$green--dark;
+    font:$title-font--bubble;
+    @include media('>=laptop'){
+        font:28px Vintage;
+    }
+}
+.bubble__search-year--result{
+    background:$green-linear__Button;
+    color:$orange--light;
+    font:$subTitle-font--bubble;
+    @include media('>=laptop'){
+        font:20px Haarlem Deco DEMO;
+  
+    }
+    @include media('>draw-6'){
+        min-height:60px;
+    }
+}
+// .second:first-child{
+//     height:
+// }

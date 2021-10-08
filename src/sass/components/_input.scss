@@ -1,0 +1,44 @@
+.input{ 
+    border-radius: 25px !important;
+    font:$inputText-font !important;
+    width:fit-content !important;
+}
+.input-group{ 
+    // @include media('<=desktop', '>laptop'){
+    //     margin-top:-70vh !important;
+    //     margin-left:30vw;
+    //     align-content:center;
+    // } 
+}
+.button__search--cross-search{ 
+    @include media('>tablet'){ 
+        height:fit-content !important;
+    }
+}
+.input--cross-search{
+    margin-top:1.2vh;
+    margin-right:2.4vw;
+}
+.form-select{ 
+    border-radius:50px !important;
+}
+#selectInfosSpan[data-descr], #selectInfosSpanTour, #selectInfosSpanSearchYear {
+    position: relative;
+    cursor:no-drop;
+  }
+  
+#selectInfosSpan[data-descr]:hover::after, #selectInfosSpanTour[data-descr]:hover::after, #selectInfosSpanSearchYear[data-descr]:hover::after{
+    content: attr(data-descr);
+    position: absolute;
+    left: -50px;
+    top: 24px;
+    min-width: 200px;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background: $orange--dark;
+    padding: 6px;
+    text-decoration:none;
+    color: $green--darker;
+    font-size: 14px;
+    z-index: 1;
+  }

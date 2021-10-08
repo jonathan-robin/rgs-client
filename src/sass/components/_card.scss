@@ -1,0 +1,117 @@
+.card{ 
+    margin-top:-100px;
+    border-radius:10px !important;
+    @include media('>tablet'){
+        margin-top:-30vw;
+    }
+    z-index:100;
+    background-color:transparent !important;
+    border:none !important;
+
+}
+.card__profile--grid{ 
+        margin:auto;
+        width:calc(min(80vw, 900px)) !important;
+        display:grid !important;
+        background:$green-linear__card;
+        grid-template-columns: repeat(5,1fr);
+        box-shadow: $boxShadow__Match--victoire;
+        border-radius:10px !important;
+        z-index:101;
+}
+.card__profile__info--name{ 
+    font:$subTitle-font--rem;
+    padding-top:2rem;
+    padding-left:2.5rem;
+    display:grid !important;
+    grid-column-start: 1 !important;
+    grid-column-end:4 !important;
+    grid-row: 1 !important;
+}
+.card__profile__info--prenom{ 
+    padding:0.5rem 3.5rem;
+    display:grid !important;
+    grid-column-start: 1 !important;
+    grid-column-end:3 !important;
+    grid-row: 2 !important;
+}
+.card__profile__info--drapeau{ 
+    display:grid !important;
+    padding:0.5rem 0rem;
+    grid-column-start: 3 !important;
+    grid-column-end:4 !important;
+    grid-row: 2 !important;
+}
+.card__profile__info--photo{ 
+    padding:2rem 2rem;
+    img{
+        width:100%;
+        border-radius:15px;
+        box-shadow:$boxShadow__button--small
+    }
+    
+    grid-column-start: 4 !important;
+    grid-column-end:6 !important;
+    grid-row-start: 1 !important;
+    grid-row-end: 4 !important;
+}
+.card__profile__label--first-time{ 
+    padding-inline: 2rem;
+    grid-column-start: 1 !important;
+    grid-column-end:4 !important;
+    grid-row: 4 !important;
+}
+.card__profile__label--last-time{ 
+    grid-column-start: 4 !important;
+    grid-column-end:6 !important;
+    grid-row: 4 !important;
+}
+.card__profile__label--number-time{ 
+    padding:1rem 2rem;
+    grid-column-start: 1 !important;
+    grid-column-end:4 !important;
+    grid-row: 6 !important;
+}
+.card__profile__label--number-win{ 
+    padding-inline: 2rem;
+    grid-column-start: 1 !important;
+    grid-column-end:3 !important;
+    grid-row: 7 !important;
+}
+.card__profile__label--number-loose{ 
+    grid-column-start: 3 !important;
+    grid-column-end:5 !important;
+    grid-row: 7 !important;
+}
+.card__profile__label--ratio{ 
+    grid-column-start: 5 !important;
+    grid-row: 7 !important;
+}
+.card__profile__label--best{ 
+    padding:1rem 2rem;
+    grid-column-start: 1 !important;
+    grid-column-end:4 !important;
+    grid-row: 8 !important;
+}
+.card__profile__label--worst{ 
+    padding-block:1rem;
+    grid-column-start: 4 !important;
+    grid-column-end:6 !important;
+    grid-row: 8 !important;
+}
+
+.card__profile__result{ 
+    display:inline;
+    color:$orange--dark;
+    font:$text-font--mobile;
+    font-weight:800;
+}
+.card__profile__label{ 
+    font:$subTitle-font--bubble;
+    color:#fff;
+    font-weight:600;
+}
+.card__profile__label--info{
+    font:$title-font--bubble;
+    color:$orange--darker;
+}

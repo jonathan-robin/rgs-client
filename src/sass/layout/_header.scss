@@ -1,0 +1,43 @@
+
+.smallText{
+    justify-content: right;
+    padding-right:25px;
+}
+.logo{
+    max-height:160px;
+    height:20vw; 
+}
+.header__smallText{
+    @include media('<=tablet'){
+        width:fit-content;
+        padding-top:1vh;
+    }
+    @include media('<=desktop', '>tablet'){
+        margin-top:20px !important;
+    }
+}
+.header__slogan{
+    @include media('<=tablet'){
+        text-align: center;
+        padding-top:1.2vh;
+    }
+    @include media('<=desktop', '>tablet'){
+        margin-top:-8vh !important;
+        line-height:0.8;
+    }
+    @include media('<desktop', '>laptop'){
+        width:100%!important;
+    }
+    margin-left:20vw;
+}
+.header__title{
+    @include media('<=tablet'){
+        text-align: center;
+        padding-top:1.2vh;
+    }
+    @include media('<=desktop', '>tablet'){
+        display: flex !important;
+        justify-content: center;
+        margin:auto !important;
+    }
+}

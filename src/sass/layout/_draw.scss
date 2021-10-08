@@ -1,0 +1,46 @@
+.resultat{
+    padding-bottom:180px !important;
+}
+.resultat__match{ 
+    margin:auto !important;
+}
+.resultat__finale{
+    justify-content:center;
+    max-width: 700px !important;
+    margin: auto !important;
+    @include media('<tablet'){
+        padding:6vw;
+    }
+    @include media('<=desktop', '>tablet'){
+        padding:10px 20px;
+    }
+}
+.resultat__match--up, .resultat__match--down, 
+.resultat__match--middle{
+    padding:20px !important;
+    @include media('<tablet'){
+        padding:2vw;
+    }
+}
+.resultat__match--name{
+    margin-left:4px;
+    overflow-y:hidden !important;
+    max-height:21px;
+    margin-block:auto;
+    // justify-content: center;
+    // text-align: center;
+}
+.resultat__match--score{ 
+    // margin-left:calc(min(30px, 2vw)) !important;
+    justify-content: center;
+    margin:auto;
+}
+
+.resultat__match--flag{ 
+    margin-left:5px;
+}
+.draw__flag{
+    width:calc(min(30px, 4vw));
+    display:flex;
+
+}

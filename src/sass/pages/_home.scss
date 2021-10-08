@@ -1,0 +1,131 @@
+html{
+    overflow-x: hidden;
+}
+body{
+    background-color:transparent !important;
+}
+p{
+    font:$text-font--mobile;
+}
+.title-welcome{
+    margin-left:60%;
+    z-index:1;
+    text-align:center;
+    @include media('<=tablet'){
+        margin-top:-10vh !important;
+    }
+        @include media('<=desktop', '>laptop'){
+        margin-left:30% !important;
+        margin-top:8% !important;
+    }
+    @include media('<=laptop', '>tablet'){
+        margin-left:10% !important;
+        margin-top:20% !important;
+    }
+}
+.title--welcome{
+    @include media('<=tablet'){
+        margin-bottom:2vh;
+    }
+}
+.text-welcome{
+    margin-left:60%;
+    position:relative;
+    text-align:center;
+    margin-top:2%;
+    div{
+        margin-top:3%;
+    }
+    @include media('<=tablet'){
+        margin-left:25vw;
+    }
+    @include media('<=desktop', '>laptop'){
+        margin-left:30% !important;
+    }
+    @include media('<=laptop', '>tablet'){
+        margin-left:0;
+    }
+}
+.sub-title--welcome{
+    @include media('<=tablet'){
+        margin-bottom:2vh;
+        margin-top:8vh;
+    }
+}
+.zindexClass{
+    z-index:-1 !important;
+}
+.sub-title.sub-title--year, .sub-title.sub-title--profil,
+.sub-title.sub-title--joueur{
+    padding-bottom:1.2vh;
+    padding-left:5vw;
+}
+.sub-title.sub-title--cross-search{
+    text-align:left;
+    padding-bottom:1.2vh;
+    @include media('<=tablet'){
+        text-align:center;
+    }
+}
+.sub-title--lighter{
+    padding-bottom:2vh;
+}
+.sub-title--lighter--bull{ 
+    padding-right:30%;
+    padding-top:1vh;
+}
+.text__stats--matchs{
+    margin-left:-10vw;
+    @include media("<tablet"){
+        margin-left:-35vw;
+        margin-top:5vh;
+        font-weight:600;
+    }
+}
+.text__stats--matchs, .text__stats--joueurs, .text__stats--editions{
+    font-weight:600;
+    @include media('<=desktop', '>tablet'){
+        margin-top:5px !important; 
+    }
+}
+.text__stats--joueurs{
+    margin-left:12vw;
+    @include media("<tablet"){
+        margin-left:15vw;
+    }
+}
+.text-regular__new{ 
+    margin-top:2vh;
+}
+.tennisPortrait{
+    margin-top:5vw;
+    margin-left:5vw;
+    max-height:240px;
+    height:44vw;
+    @include media('<=tablet'){
+        margin-left:10vw;
+        margin-top:-4vw;
+    }
+    @include media('<=desktop', '>tablet'){
+        height:33vw;
+        max-height:300px;
+        margin-left:20vw;
+        margin-top:-100px;
+        margin-right:-50px;
+    }
+}
+.eiffelTower{
+    height:50vw;
+    z-index:100;
+    margin-left:5vw;
+    position:absolute;
+    max-height:380px;
+    @include media('<=tablet'){
+        margin-top:calc(130px - 25vw);
+    }
+    @include media('<=desktop', '>tablet'){
+        margin-top:-100px;
+        margin-right:-50px;
+        float:left;
+    }
+}

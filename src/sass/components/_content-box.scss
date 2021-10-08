@@ -1,0 +1,239 @@
+.content{
+    padding:2vw 3vw 1vw 3vw;
+    @include media('<desktop', '>laptop'){
+        padding:2vw 8vw 1vw 8vw;
+    }
+}
+.content-box{
+    padding-top:4vh;
+    z-index:1; 
+    @include media('<=tablet'){
+        padding:8vh 10vw !important;
+    }
+    @include media('<=desktop', '>tablet'){
+        padding:8vh 15vw !important;
+    }
+}
+.content-box, .content-box--profil{
+    text-align:center;
+}
+.content-box--joueur{
+    @include media('<=tablet'){ 
+        margin-top:100px !important;
+    }
+}
+.content-box--cross-search{ 
+    text-align:center !important;
+    @include media('<=desktop', '>laptop'){
+        width:40% !important;
+        margin-left:0 !important;
+    }
+}
+.content-box--bull{ 
+    padding-top:20vw !important;
+    @include media('<=tablet'){
+        padding-top:20vw !important;
+        margin-left:2vh;
+    }
+}
+.content-box__search{
+    padding:1vh 1vw;
+    display:flex;
+    padding-left: 10vw !important;
+    padding-right: 10vw !important;
+}
+.content-box__search.content-box__search--profil,
+.content-box__search.content-box__search--joueur, 
+.content-box__search.content-box__search--bull, 
+.content-box__search.content-box__search--slider{
+    justify-content: center;
+    padding-top:2vh;
+    width:100%;
+    @include media('<=tablet'){ 
+        width:100%;
+    }
+}
+.content-box--search-year--top{
+    padding-top:15vh;
+}
+.content-box, .content-box__search--year{
+    margin-left:auto;
+}
+.content-box__search.content-box__search--year{
+    justify-content: center;
+    padding-top:2vh;
+}
+.content-box__search.content-box__search--year{
+    @include media('<=desktop', '>laptop'){
+        width:30vw !important;
+        padding-bottom:10vw;
+        margin-top:-12vh;
+    }
+}
+.content-box__search.content-box__search--slider{
+    @include media('<=desktop', '>laptop'){
+        padding-bottom:10vw;
+        margin-left:30vw;
+    }
+}
+.content-box__search.content-box__search--profil{
+    @include media('<=desktop', '>laptop'){
+        width:30vw !important;
+        padding-bottom:10vw;
+        margin-top:-10vh;
+    }
+}
+.content-box__search.content-box__search--joueur{
+    @include media('<=desktop', '>laptop'){
+        width:30vw !important;
+        padding-bottom:10vw;
+        margin-top:-10vh;
+        margin-left:auto;
+    }
+}
+.content-box__search--cross-search{
+    justify-content: space-around;
+    padding-left:20vw !important; 
+    align-items:center !important;
+    // min-width:70% !important;
+}
+
+.content__text{
+    padding:0vw 5vw;
+    @include media('<=desktop', '>tablet'){
+        padding:0vh 10vw;
+    }
+}
+.content-box--year .content-box__text{
+    @include media('<=desktop', '>laptop'){
+        width:40vw !important;
+    }
+}
+.content-box--profil .content-box__text{
+    @include media('<=desktop', '>laptop'){
+        width:40vw !important;
+        margin-left:auto;
+    }
+}
+.content-box--joueur .content-box__text{
+    @include media('<=desktop', '>laptop'){
+        width:40vw !important;
+        margin-right:auto;
+        margin-top:-60vh;
+    }
+}
+.content-box--cross-search .content-box__text{
+    @include media('<=desktop', '>laptop'){
+        width:40vw !important;
+        margin-right:auto !important;
+    }
+}
+.content-box--bull .content-box__text{
+    @include media('<=desktop', '>laptop'){
+        // width:40vw !important;
+        // margin-right:auto !important;
+        max-width:900px !important;
+    }
+}
+.content-box__search.content-box__search--bull{
+    padding-bottom:350px;
+    @include media('<=desktop', '>laptop'){
+        // width:30vw !important;
+        // margin-top:-12vh;
+        // margin-left:44vw;
+    }
+
+}
+.content-box.content-box--bull{
+    @include media('>laptop'){
+        display:flex !important; 
+        flex-direction:column !important; 
+        flex-wrap: nowrap !important;
+    }
+}
+.proposition_player, .proposition_player--searchCross, .proposition_player--searchBull{ 
+    max-height:350px;
+    max-width:180px;
+    background-color:white ;
+    overflow-y: scroll;
+    border-radius: 15px;
+    padding:5px;
+    border:1px solid $green--darker;
+    position:absolute;
+    z-index:10;
+}
+.proposition_player.hidden, .proposition_player--searchCross.hidden, .proposition_player--searchBull.hidden{ 
+    visibility: hidden;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.proposition_player::-webkit-scrollbar, .proposition_player--searchCross::-webkit-scrollbar, .proposition_player--searchBull::-webkit-scrollbar, .form-select::-webkit-scrollbar{
+    display: none;
+  }
+  .proposition_player--searchBull{
+      margin-left:-150px;
+      margin-top:30px;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .proposition_player, .proposition_player--searchCross, .proposition_player--searchBull, .form-select{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .proposition_player--searchBull{
+    //   margin-top:-350px !important; 
+    //   margin-left: -150px !important;
+    // top:2170px;
+    // margin-left:-150px !important;
+}
+.propal_joueur{ 
+    position:relative;
+    display:flex;
+    justify-content: flex-start;
+    padding-block:.5vw;
+    &::after{
+        content:'';
+        background: gray;
+        height:2px;
+        width:60%;
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform:translate(-50%)
+    }
+    &:hover, &:focus{ 
+        background-color:$orange--dark;
+        cursor:pointer;
+    }
+}
+.wave-bottom--green{
+     @include media('>laptop'){
+        //  margin-top:28vw;
+         position:relative !important;
+     }
+}
+.outer-cross{ 
+    @include media('>laptop'){ 
+        display:flex;
+        margin-top:10vw;
+    }
+}
+.green{ 
+    @include media('>laptop'){
+        margin-top:-20vw;
+        // position:relative !important;
+    }
+}
+.draw__flag.propal{ 
+    max-height:25px;
+    margin-right:3px;
+}
+a{
+    height:fit-content;
+}
+
+
+
+
+
+
+
+

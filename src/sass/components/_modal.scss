@@ -1,0 +1,184 @@
+.modal__cross-search{
+    background: $green-linear__Fond-match;
+    box-shadow: $boxShadow__Fond-match;
+    border-radius:25px;
+    margin: 7vw 3vw !important;
+    max-width:900px;
+    @media screen and (min-width: 975px){
+        margin-inline:auto !important; 
+    } 
+}
+
+.modal__bull{
+    background:$bull__modal--linear-background; 
+    box-shadow:$bull__modal--box-shadow; 
+    border-radius:15px;
+    max-width:1200px;
+    margin-bottom:10vw;
+    img{ 
+        position:absolute;
+        width:calc(min(5rem, 100px));
+        margin-left:1.6rem;
+        margin-top:1rem;
+    }
+}
+.grid__modal__bull{
+    display:grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding:2rem;
+}
+.modal__bull--selected{
+    background:$bull__modal--selected--linear-background; 
+    box-shadow: $bull__modal--selected--box-shadow;
+    margin-bottom:1rem;
+
+}
+.modal__bull--info, .modal__bull--match{
+    background:$bull__modal--result--linear-background; 
+    box-shadow:$bull__modal--result--box-shadow; 
+    margin-bottom:1rem;
+}
+.modal__bull--match--tour,.modal__bull--match--year, .modal__bull--match--score { 
+    background:$bull__modal--match--result--linear-background; 
+    box-shadow: $boxShadow__Match--defaite;
+}
+.modal__bull--selected, .modal__bull--info, .modal__bull--match--score,
+.modal__bull--match--tour, .modal__bull--match--year{
+        border-radius:15px;
+        width:fit-content;
+        padding-inline:0.8rem;
+        padding-block:0.4rem;
+        font:$subTitle-font--rem;
+        color:white;
+}
+//image taureau
+.grid__modal__bull img{
+    height:10px;
+}
+// Joueur selectionne 
+.modal__bull--selected:nth-of-type(1){ 
+    grid-column-start:4; 
+    grid-column-end:6;
+}
+// //NOM joueur
+.modal__bull--selected:nth-of-type(2){
+    grid-column-start:6; 
+    grid-column-end:9;
+}
+//BETE Noire
+.modal__bull--info:nth-of-type(3){ 
+    grid-column-start:4; 
+    grid-column-end:6; 
+    grid-row-start:3;
+}
+//NOM BETE
+.modal__bull--info:nth-of-type(4){
+    grid-column-start:6; 
+    grid-column-end:9; 
+    grid-row:3;
+}
+//NB Defaite
+.modal__bull--info:nth-of-type(5){
+    grid-column-start:6; 
+    grid-column-end:9; 
+    grid-row:4;
+}
+.modal__bull--matchList{ 
+    grid-column-start:2; 
+    grid-column-end:8; 
+    grid-row-start:8;
+}
+.modal__bull--match{ 
+    display: grid;
+    grid-template-columns:repeat(6, 1fr);
+    border-radius:15px;
+    grid-column-start:2; 
+    grid-column-end:8; 
+    grid-row-start:8;
+    margin-bottom:1rem;
+    justify-content: space-around;
+    padding-block:0.2rem;
+}
+//resultat match TOUR
+.modal__bull--match--tour{
+    grid-column-start:2; 
+    grid-column-end:3; 
+}
+//resultat match YEAR
+.modal__bull--match--year{
+    grid-column-start:3; 
+    grid-column-end:4;
+}
+//resultat match SCORE
+.modal__bull--match--score{
+    grid-column-start:4; 
+    grid-column-end:8;
+}
+.modal__filter--cross-search{
+    div{
+        background: transparent linear-gradient(180deg, #0C5924 0%, #18770E 100%) 0% 0% no-repeat padding-box;
+        box-shadow: inset 0px 3px 6px #208E00, 12px 6px 4px #E59215;
+        border-radius: 44px;
+        opacity: 0.79;
+        text-align:center; 
+        font: $subTitle-lighter-font;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        text-shadow: 0px 3px 6px #00000029;
+        margin:10px 0 10px 15px;
+        @include media('<=tablet'){
+            display:flex;
+        }
+        p{
+            margin: 6px auto;
+            @include media('<=tablet'){
+                font:$subTitle-lighter-font--mobile
+            }
+        }
+    }
+}
+.modal__matchList--cross-search{
+    .modal__match--cross-search{ 
+        margin:14px auto; 
+        opacity:0.79; 
+        border-radius:44px;
+        div{
+            text-align:left; 
+            font:$text-font--mobile; 
+            letter-spacing: 0px;
+            color:white;
+        }
+    }
+    .modal__match--cross-search--win{
+        background:$green-linear__Match--victoire; 
+        box-shadow:$boxShadow__Match--victoire;
+    }
+    .modal__match--cross-search--loose{
+        background:$green-linear__Match--defaite; 
+        box-shadow:$boxShadow__Match--defaite;
+    }
+}
+.modal__affiche{
+    background: rgba(0,0,0,0.7);
+    // z-index:10000;
+    position:fixed; 
+    top:0; 
+    left:0;
+    width:100%; 
+    height:100%;
+    opacity:0; 
+    pointer-events: none; 
+    transition:all 0.25s ease;
+}
+.modal__affiche.open{ 
+    opacity:1; 
+    pointer-events:all;
+}
+.modal__affiche p{ 
+    color:white; 
+    font:$subTitle-font--rem; 
+    position:absolute; 
+    bottom:5%; 
+    left:50%; 
+    transform: translate(-50%, -5%)
+}

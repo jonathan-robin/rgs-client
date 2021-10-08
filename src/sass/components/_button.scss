@@ -1,0 +1,177 @@
+.button{
+    border-radius:2rem;
+    box-shadow:$boxShadow__button--small;
+    border:none;
+    margin-left:2rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    font:$buttonText-font;
+    width:fit-content;
+    padding-block:0.5rem;
+} 
+.button__profile{
+    background:$green-linear__Button !important;
+    color:white;
+    &:hover{ 
+        background:$orange-linear__Button !important;
+    }
+    padding-inline:1.2rem;
+    padding-block:0.5rem;
+    cursor:pointer;
+    z-index:100;
+}
+
+.button__player--info:nth-of-type(1),.button__player--match:nth-of-type(1){
+    grid-column-start: 1;
+    grid-column-end:4 !important;
+    @include media('>=tablet'){
+    }
+}
+.button__player--info:nth-of-type(2),.button__player--match:nth-of-type(2){
+    grid-column-start: 4;
+}
+.button__player--info:nth-of-type(3),.button__player--match:nth-of-type(3){
+    grid-column-start: 5;
+}
+.button__player--info:nth-of-type(4), .button__player--match:nth-of-type(4){
+    grid-column-start: 6;
+    grid-column-end:9;
+    @include media('>=tablet'){
+    }
+}
+.content__player--info{
+    img{
+        grid-column-start: 9;
+        height:calc(35px + 0.5vw);
+        // margin-bottom:2em;
+    }
+}
+
+.button__player--match-list{
+    font:$title-font--bubble;
+    background:$green-linear__Button;
+    color:white;
+    margin-block:2rem;
+}
+.button__player--sum, .button__player--info{
+    font:$subTitle-font--bubble ;
+    @include media('<draw-6'){
+        font:calc(11px + 0.9vw) Haarlem Deco DEMO;
+    }
+    background:$gray-linear__Button;
+    color:white;
+    padding:0.5em;
+    margin-bottom:2em;
+}
+.content__player--match{
+    border-radius:15px;
+    margin-bottom:1rem !important;
+} 
+.content__player-match--loose{
+    background:$green-linear__Match--defaite;
+    box-shadow: $boxShadow__Match--defaite;
+}
+.content__player-match--win{
+    background:$green-linear__Match--victoire;
+    box-shadow: $boxShadow__Match--victoire;
+}
+.button__player--match{ 
+    font:$subTitle-font--bubble ;
+    @include media('<draw-6'){
+        font:calc(11px + 0.9vw) Haarlem Deco DEMO;
+    }
+    color:white;
+    padding:0.5em;
+    // padding-top:2rem;
+}
+.button__profile--match{ 
+
+}
+
+.button__profil--bull{
+
+}
+.button__carousel--next, .button__carousel--previous{
+    font:14px Calibri !important;
+    padding-inline:1.4em !important;
+    padding-block:.4em !important;
+}
+.button__player--match:first-of-type{
+    display:flex;
+}
+.matchs_flag{ 
+    margin-right:15px;
+}
+.button-group--Profile--year{
+    display:flex;
+    flex-wrap: wrap;
+    width:80vw;
+    @media screen and (min-width:900px){ 
+        width:calc(min(80vw, 900px));
+    }
+    margin:auto !important;
+    justify-content: center;
+}
+.button__profile--year{
+        cursor:pointer;
+        &:hover{
+            background: $orange-linear__Button;
+            color:$green--dark;
+        }
+        border-radius:0.5em;
+        box-shadow:$boxShadow__button--small;
+        background:$green-linear__Button;
+        color:white;
+        margin-inline:0.4em;
+        margin-top:0.4rem;
+        border:none;
+        font:$buttonText-font;
+        width:fit-content;
+        padding:0.5rem
+}
+// <div className='button-group--Profile--year'>
+// <div className="button button__profile button__profile--year">2018</div>
+.button-group--Profile{
+    width:calc(min(80vw, 900px)) !important;
+    display:flex; 
+    margin:auto;
+    justify-content:flex-end;
+    margin-top:2rem;
+}
+.button.button__search--year, .button.button__search--profil,
+.button.button__search--joueur, .button.button__search--cross-search, 
+.button.button__carousel
+{ 
+    background:$green-linear__Button !important;
+    color:white;
+    &:hover{ 
+        background:$orange-linear__Button !important;
+    }height:50
+}
+.button.button__search--cross-search{
+    height:50%;
+    margin-top:4vh;
+    @include media('<=tablet'){
+        margin-top:4vh;
+    }
+}
+.button__carousel--affiche{
+    // padding:0.8vh 2vh 0.8vh 2vh;
+}
+.button.button__search--bull{
+    background:$orange-linear__Button;
+    color:white;
+    &:hover{ 
+        background:$green-linear__Button !important;
+    }height:50
+}
+.button.button__carousel {
+    font:$buttonText-font;
+    // padding-block:0.5rem;
+    background:$green-linear__Button !important;
+    color:white;
+}
+.button.button__carousel--affiche{
+    font:$buttonText-font;
+}
+

@@ -1,0 +1,49 @@
+.carousel{
+    height:33vh;
+}
+.carousel .carousel_item, 
+.carousel .carousel_item--hidden {
+    display:none; 
+}
+.carousel .carousel_item--visible{
+    display:block;
+}
+.carousel .carousel_actions{ 
+    margin:auto;
+    display:flex;
+    justify-content: center;
+    margin-top:2vh;
+}
+.imgAffiche{
+    height:28vh;
+    width:31vw;
+    max-width:180px;
+    border-radius:8px;
+    margin-inline:.2rem;
+    cursor:pointer;
+    &:hover{
+        transform:scale(1.2);
+    }
+    transition:all 0.3s ease-out;
+}
+.full-affiche{ 
+    z-index:1000000;
+    position:absolute; 
+    top:50%; 
+    left:50%; 
+    height:70%; 
+    transform:translate(-50%, -50%) scale(0.5);
+    transition:all 0.25s ease-out;
+}
+.full-affiche.open{ 
+    transform:translate(-50%, -50%) scale(1);
+}
+.lesAffiches{
+    overflow:hidden;
+    display:flex;
+    justify-content: center;
+    @include media('<=tablet'){
+        justify-content: center;
+        margin-top:2vh;
+    }
+}

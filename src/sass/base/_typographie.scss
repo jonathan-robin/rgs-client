@@ -1,0 +1,82 @@
+.smallerText{
+    font:$smallerText-font;
+    color:white;
+}
+.footer__item, .smallText{
+    &:hover{ 
+        text-decoration:underline;
+    }
+}
+.smallText{
+    font:$smallText-font;
+    color:$green--dark;
+    cursor:pointer;
+    @include media('<=tablet'){
+        font:12px Haarlem Deco DEMO;
+    }
+    @include media('<=desktop', '>tablet'){
+        font:14px Haarlem Deco DEMO;
+        line-height:1.2;
+    }
+
+}
+.inputText-font{ 
+    font:$inputText-font;
+}
+.text-regular{
+    font:$text-font--mobile; 
+    color:$green--regular;  
+    line-height: 0.9; 
+    @include media('<=tablet'){ 
+        line-height: $text-font--line-height;
+    }
+}
+.content-box__search--cross-search button{
+    @include media('<=draw-6'){
+        font:13px Haarlem Deco DEMO;
+    }
+}
+.text-regular--bull{ 
+    color:$orange--dark;
+}
+.sub-title--lighter{
+    font:$subTitle-lighter-font--mobile;
+    color:$green--regular;
+}
+.sub-title--lighter--bull{
+    font:$subTitle-lighter-font--mobile;
+    color:$orange--dark;
+}
+.sub-title--bull{
+    color:$orange--darker !important;
+}
+.sub-title{
+    font:$subTitle-font--mobile; 
+    color:$green--dark;
+    @include media('<=tablet'){
+        font:$subTitle-font--mobile;
+    }
+    @include media('<=desktop', '>tablet'){
+        font:$subTitle-font--mobile; 
+    }
+}
+.title{ 
+    font: $title-font;
+    color:$green--darker;
+    @include media('<=tablet'){
+        font: $title-font--mobile;
+        line-height:0.7;
+    }
+    @include media('<=desktop', '>tablet'){
+        font:64px Vintage;
+        line-height:0.8;
+    }
+}
+.content-box__search{
+    label{ 
+        // font:$text-font; 
+        @include media('<=tablet'){
+            font:$text-font--mobile;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+
+//Colors
+$green--darker: #05482F;
+$green--dark: #1A6106;
+$green--regular: #208E00;
+$green--light:#34C709;
+$orange--darker: #F05606;
+$orange--dark: #E59215;
+$orange--regular: #F0B206;
+$orange--light:#F0E806;
+$green-linear__Button: transparent linear-gradient(180deg, #5CD23A 0%, #2E691D 100%) 0% 0% no-repeat padding-box;
+$green-linear__Filter: transparent linear-gradient(180deg, #0C5924 0%, #18770E 100%) 0% 0% no-repeat padding-box;
+$green-linear__Match--victoire: transparent linear-gradient(267deg, #5CD23A 0%, #196E00 49%, #05482F 100%) 0% 0% no-repeat padding-box;
+$green-linear__Match--defaite: transparent linear-gradient(267deg, #F3EC37 0%, #E59215 49%, #F37737 100%) 0% 0% no-repeat padding-box;
+$green-linear__Fond-match: transparent linear-gradient(140deg, #F3EC37 0%, #F37D37 100%) 0% 0% no-repeat padding-box;
+$orange-linear__Button: transparent linear-gradient(180deg, #F3C137 0%, #F37737 100%) 0% 0% no-repeat padding-box;
+$green-linear__card : transparent linear-gradient(220deg, rgba(32, 142, 0, 0.8) 0%, rgba(92, 210, 58, 0.6) 100%) 0% 0% no-repeat padding-box;
+$gray-linear__Button: transparent linear-gradient(0deg, rgb(213,223,211) 0%, rgb(107,112,106) 100%) 0% 0% no-repeat padding-box;
+
+$bull__modal--linear-background : transparent linear-gradient(133deg, #F3EC37 0%, #F37D37 100%) 0% 0% no-repeat padding-box;
+$bull__modal--box-shadow : inset 8px 8px 6px #F3EC37, 18px 18px 40px #2E2E2E;
+
+$bull__modal--match--linear-background:transparent linear-gradient(266deg, #F3EC37 0%, #E59215 49%, #F37737 100%) 0% 0% no-repeat padding-box;
+$bull__modal--match--box-shadow: inset 0px 3px 6px #F3C137, 12px 6px 4px #E59215;
+
+$bull__modal--selected--linear-background:transparent linear-gradient(180deg, #0C5924 0%, #18770E 100%) 0% 0% no-repeat padding-box;
+$bull__modal--selected--box-shadow:inset 0px 3px 6px #208E00, 12px 6px 4px #E59215;
+$bull__modal--result--linear-background:transparent linear-gradient(260deg, #F3EC37 0%, #E59215 49%, #F37737 100%) 0% 0% no-repeat padding-box;
+$bull__modal--result--box-shadow:inset 0px 3px 6px #F3C137, 12px 6px 4px #E59215;
+
+$bull__modal--match--result--linear-background:transparent linear-gradient(251deg, #F3EC37 0%, #E59215 49%, #F37737 100%) 0% 0% no-repeat padding-box;; 
+$bull__modal--match--result--box-shadow:inset 0px 3px 6px #F3C137, 2px 2px 2px #242322;
+
+//Font
+$text-font--line-height:0.8;
+
+$title-font:7vw Vintage;
+$subTitle-font:3.5vw Haarlem Deco DEMO;
+$text-font:2.5vw Calibri;
+$smallText-font:10px Haarlem Deco DEMO;
+$inputText-font:14px Calibri;
+$buttonText-font:calc(12px + 0.6vw) Haarlem Deco DEMO;
+
+$subTitle-lighter-font:22px Haarlem Deco DEMO;
+$smallerText-font:10px calibri;
+
+//Font mobile 
+$title-font--mobile:10vw Vintage;
+$smallText-font--mobile:calc(12px + 1.1vw) Haarlem Deco DEMO;
+$subTitle-font--mobile:calc(18px + 1.1vw) Haarlem Deco DEMO;
+$text-font--mobile:calc(10px + 0.9vw) Calibri;
+$subTitle-lighter-font--mobile:calc(10px + 1.4vw) Haarlem Deco DEMO;
+$title-font--bubble:calc(14px + 0.9vw) Vintage;
+$subTitle-font--bubble:calc(12px + 0.9vw) Haarlem Deco DEMO;
+
+//Font rem
+// $title-font--rem:1rem Vintage;
+// $smallText-font--mobile:calc(12px + 1.1vw) Haarlem Deco DEMO;
+$subTitle-font--rem:1.2rem Haarlem Deco DEMO;
+$text-font--rem:1.1rem Calibri;
+// $subTitle-lighter-font--mobile:calc(10px + 1.4vw) Haarlem Deco DEMO;
+$title-font--rem:1.8rem Vintage;
+// $subTitle-font--bubble:calc(12px + 0.9vw) Haarlem Deco DEMO;
+
+//Shadow 
+$boxShadow__button--small : 5px 10px 4px #00000029;
+$boxShadow__Filter : inset 0px 3px 6px #208E00, 12px 6px 4px #E59215;
+$boxShadow__Fond-match : inset 8px 8px 6px #F3EC37, 18px 18px 6px #E54E15;; 
+$boxShadow__Match--defaite : inset 0px 3px 6px #F3C137, 12px 6px 4px #E59215;
+$boxShadow__Match--victoire : inset 0px 3px 6px #5CD23A, 12px 6px 4px #E59215;
+
+$boxShadow__card--inset:inset 8px 2px 16px rgba(33, 142, 0, 0.548), 5px 10px 4px #00000029;

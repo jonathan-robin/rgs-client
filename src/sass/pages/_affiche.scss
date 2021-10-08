@@ -1,0 +1,16 @@
+.grid_affiches{
+    display:grid; 
+    padding:5vw;
+    grid-template-columns: repeat( auto-fill, minmax(180px, 1fr) );
+    gap: 2vw 0 ;
+    justify-items: center;
+}
+._grid_affiche_container{
+}
+.grid_affiche_img{
+    height:250px;
+    border-radius:15px;
+}
+.row.content.illustration__searchYear.affiche{ 
+    margin-top:7vw !important;
+}
