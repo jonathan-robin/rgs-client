@@ -1,6 +1,20 @@
-import { get_filtered_set } from "../api/utils/utils";
-import { __scoreSorted } from "../interface/__scoreSorted";
+// import { get_filtered_set } from "../api/utils/utils";
+import { __scoreSorted } from "./interface/__scoreSorted";
 import tourToString from "../components/utils/tourToString";
+
+ /**
+  * Reformate les scores et retourne sans champ vide
+  * @param { score } []string
+  * @returns { []string }
+  */
+  export function get_filtered_set(score:string[]){
+    // On retourne les sets non vides
+    var filterSet = score.filter(function(set){ return set != "" && set != " " && set != "ab";});
+    // Si le set est supérieure à 60(64 = 6/4 au tie break), on retourne 6;
+    filterSet.map((set, index) => {if (parseInt(set) > 60){filterSet[index] = "6"}})
+    console.log(filterSet);
+    return filterSet;
+}
 
 export interface __match{ 
     IDMATCH:number,

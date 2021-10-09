@@ -1,5 +1,5 @@
 import '../../sass/main.css';
-import react, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import usePool from '../../hooks/SearchPlayer/usePool';
 import Player from '../../classes/player';
 import SlidePoster from '../../components/common/SlidePoster';
@@ -15,8 +15,10 @@ import {
   Link 
 } from 'react-router-dom';
 
+
 function Home() {
-  const [players, setPlayers] = useState<Player[]>(usePool());
+  
+
 
   return (
       <html>
@@ -88,7 +90,7 @@ function Home() {
 
 
         {/* --> Début Recherche par Profil */}
-            <SearchProfil_search players={players}/>
+            <SearchProfil_search/>
         {/* <-- Fin Recherche par profil */}
             </div>
         {/* <-- Fin background orange*/}
@@ -99,7 +101,7 @@ function Home() {
         {/* <-- Fin SVG shape orange BOTTOM*/}
             
         {/* --> Début SearchCross*/}
-            <SearchCross_search players={players}/>
+            <SearchCross_search/>
         {/* <-- Fin SearchCross*/}
 
         {/* --> Début SVG shape vert*/}
@@ -109,7 +111,7 @@ function Home() {
         {/* --> Début background vert*/}
             <div className='green'>
         {/* <-- Début Recherche Bonus */}
-            <SearchBull_search players={players}/>
+            <SearchBull_search/>
         {/* --> Fin Recherche Bonus */}
 
             <Footer />

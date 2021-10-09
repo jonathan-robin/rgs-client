@@ -1,4 +1,4 @@
-import{__match} from '../interface/__match';
+import{__match} from './interface/__match';
 import { editions } from '../components/searchProfile/SearchProfile_participation';
 
 export interface __profil{ 

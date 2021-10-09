@@ -4,15 +4,18 @@ import usePool from "../../hooks/SearchPlayer/usePool";
 import Player from "../../classes/player";
 import Profil from "../../classes/profil";
 import { __player } from "../../classes/player";
-import { __profil } from "../../interface/__profil";
+import { __profil } from "../../classes/interface/__profil";
 import { useHistory } from "react-router-dom";
 import InputGroupWithExtras from "react-bootstrap/esm/InputGroup";
+import { usePlayersContext } from "../../contex/PlayersContext";
 
 /**
  * Retourne le search Box de Home pour la recherche par Profil
  */
-function SearchProfil_search(props:{players:Player[]}) {
+function SearchProfil_search() {
+  
   const [profil, setProfil] = useState<Profil>();
+  const players = usePlayersContext();
   const [inputValue, setInputValue] = useState<string>("");
   const [display, setDisplay] = useState<boolean>(false);
   const history = useHistory();
@@ -51,11 +54,12 @@ function SearchProfil_search(props:{players:Player[]}) {
         prenom: player.player_prenom,
         id: player.player_id,
         nat: player.player_nat,
+        players:players.players
       }),
     })
       .then((res) => res.json())
       .then((res) =>
-        history.push({ pathname: "/searchProfile", state: { profil: res } })
+        history.push({ pathname: "/searchProfile", state: { profil: res, players:players.players} })
       );
   }
 
@@ -85,7 +89,7 @@ function SearchProfil_search(props:{players:Player[]}) {
             />
             {display && (
               <div className="proposition_player hidden">
-                {props.players
+                {players.players
                   ?.filter(
                     (player: Player) =>
                       player.player_nom

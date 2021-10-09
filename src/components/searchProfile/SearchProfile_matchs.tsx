@@ -7,6 +7,8 @@ import Profil from '../../classes/profil';
 import { useHistory } from 'react-router-dom';
 import {HandleClickProfile} from '../utils/HandleClickProfile';
 import {HandleClickYear} from '../utils/handleClickYear';
+import Player from '../../classes/player';
+import { usePlayersContext } from '../../contex/PlayersContext';
 
 /**
 * Renvoi les Matchs de la page profile
@@ -16,7 +18,7 @@ import {HandleClickYear} from '../utils/handleClickYear';
 */
 function SearchProfile_matchs(props:{matchList:__match[], joueur:Profil}):any {
     const history = useHistory();
-
+    const players = usePlayersContext();
      /**
      * Push la page searchYear après clic sur joueur
      * @param { String } direction
@@ -25,6 +27,8 @@ function SearchProfile_matchs(props:{matchList:__match[], joueur:Profil}):any {
     // const handleClickYear = (year:number) => { 
     //     history.push({pathname:'/searchYear', state:{year:year}})
     // }
+    console.log(players)
+    console.log(props);
 
     return (
         <>
@@ -49,7 +53,7 @@ function SearchProfile_matchs(props:{matchList:__match[], joueur:Profil}):any {
                 if (match.infos_vainq.id === props.joueur.id_joueur){
                     return(
                         <div className="content__player grid__search-player content__player--info content__player--match content__player-match--win">
-                            <div className="button__player--match" style={{cursor:'pointer'}} onClick={() => {HandleClickProfile(history, match.infos_looser)}}>
+                            <div className="button__player--match" style={{cursor:'pointer'}} onClick={() => {HandleClickProfile(history, match.infos_looser, players.players)}}>
                             <img className="matchs_flag" src={require('../../resources/flags/'+match.infos_looser.nat+'.png').default} alt="" />
                                 {match.infos_looser.nom} {match.infos_looser.prenom}</div>
                             <div className="button__player--match" onClick={() => HandleClickYear(history, match.annee)} style={{cursor:'pointer'}}>{match.annee}</div>
@@ -61,7 +65,7 @@ function SearchProfile_matchs(props:{matchList:__match[], joueur:Profil}):any {
                 {/* Sinon les infos du vainqueur  */}
                 return (
                     <div className="content__player grid__search-player content__player--info content__player--match content__player-match--loose">
-                        <div className="button__player--match" style={{cursor:'pointer'}} onClick={() => {HandleClickProfile(history, match.infos_vainq)}}>
+                        <div className="button__player--match" style={{cursor:'pointer'}} onClick={() => {HandleClickProfile(history, match.infos_vainq, players.players)}}>
                             <img className="matchs_flag" src={require('../../resources/flags/'+match.infos_vainq.nat+'.png').default} alt="" />
                                 {match.infos_vainq.nom} {match.infos_vainq.prenom}</div>
                             <div className="button__player--match" onClick={() => HandleClickYear(history, match.annee)} style={{cursor:'pointer'}}>{match.annee}</div>

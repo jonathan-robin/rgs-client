@@ -9,14 +9,16 @@ import SearchCross_year from '../SearchCross/SearchCross_year';
 import SearchCross_results from '../../pages/searchCross/index';
 import Match from "../../classes/match";
 import { __match } from "../../classes/match";
+import { usePlayersContext } from "../../contex/PlayersContext";
 
- function SearchCross_search(props:{players:Player[]}) {
+ function SearchCross_search() {
     const [profil, setProfil] = useState<Profil | null>(null);
     const [tour, setTour] = useState<number | null>(null);
     const [year, setYear] = useState<number | null>(null);
     const [result, setResult] = useState<Match[] | null>(null);
     const [reset, setReset] = useState(false);
     const [disabled, setDisabled] = useState<boolean>(true);
+    const players = usePlayersContext();
 
   useEffect(() => { 
     tour != undefined && handleSetTour(tour); 
@@ -50,6 +52,7 @@ import { __match } from "../../classes/match";
 
     const handleSetTour = (tour:number) => {
       setTour(tour);
+      setResult(null);
       fetch('https://rgstatsapi.herokuapp.com/cross', {
           method:'POST',
           headers: {
@@ -57,7 +60,7 @@ import { __match } from "../../classes/match";
               'Accept':'application/json'
           },
           body: JSON.stringify({tour:tour, 
-              year, id_joueur: profil?.id_joueur}),
+              year, id_joueur: profil?.id_joueur, players:players.players}),
       })
       .then(res => res.json())
       .then((res) => {return setResult(res.map((match:__match,index:number) => {
@@ -66,6 +69,7 @@ import { __match } from "../../classes/match";
 
     const handleSetYear = (year:number) => {
         setYear(year);
+        setResult(null);
         fetch('https://rgstatsapi.herokuapp.com/cross', {
             method:'POST',
             headers: {
@@ -73,7 +77,7 @@ import { __match } from "../../classes/match";
                 'Accept':'application/json'
             },
             body: JSON.stringify({tour, 
-                year:year, id_joueur: profil?.id_joueur}),
+                year:year, id_joueur: profil?.id_joueur, players:players.players}),
         })
         .then(res => res.json())
         .then((res) => {return setResult(res.map((match:__match,index:number) => {
@@ -116,7 +120,7 @@ import { __match } from "../../classes/match";
 
       <div className='input-group'> 
         <div className="content-box__search content-box__search--cross-search col">
-            <SearchCross_player resetInputValue={reset} handleSetProfil={handleSetProfil} players={props.players}/>
+            <SearchCross_player resetInputValue={reset} handleSetProfil={handleSetProfil}/>
             <SearchCross_year disabled={disabled} resetInputValue={reset} handleSetYear={handleSetYear} />
             </div>
         <div className="content-box__search content-box__search--cross-search col">

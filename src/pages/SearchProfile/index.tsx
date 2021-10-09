@@ -5,8 +5,9 @@ import SearchProfile_participation from "../../components/searchProfile/SearchPr
 import SearchProfile_matchs from "../../components/searchProfile/SearchProfile_matchs";
 import {RouteComponentProps} from 'react-router-dom';
 import Profil from '../../classes/profil';
-import { __profil } from "../../interface/__profil";
+import { __profil } from "../../classes/interface/__profil";
 import react, {useEffect} from 'react';
+import { usePlayersContext } from "../../contex/PlayersContext";
 
 type profile = {
   profile:Profil
@@ -21,6 +22,12 @@ export default function SearchProfile(props: RouteComponentProps<{}, any, profil
   useEffect(() => {
     window.scrollTo(0, 0);
   },[props])
+
+  const players = usePlayersContext();
+
+  useEffect(() => {
+    console.log(props.location.state.profile)
+  },[])
 
   return (
     <html>

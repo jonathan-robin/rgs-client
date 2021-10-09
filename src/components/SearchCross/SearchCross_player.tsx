@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Player from "../../classes/player";
 import { __player } from "../../classes/player";
-import { __profil } from "../../interface/__profil";
+import { __profil } from "../../classes/interface/__profil";
 import $ from 'jquery';
+import { usePlayersContext } from "../../contex/PlayersContext";
 
 /**
  * Retourne input player pour la recherche croisée
  */
-function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any, players:Player[]}) {
+function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
   const [inputValue, setInputValue] = useState("");
   const [display, setDisplay] = useState(false);
+  const players = usePlayersContext();
+
+  console.log('searchPlayer global context', players.players)
 
   useEffect(() => { 
     setInputValue('');
@@ -40,6 +44,7 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any, pla
         prenom: player.player_prenom,
         id: player.player_id,
         nat: player.player_nat,
+        players:players.players
       }),
     })
       .then((res) => res.json())
@@ -60,7 +65,7 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any, pla
         />
         {display && (
           <div className="proposition_player--searchCross hidden">
-            {props.players
+            {players.players
               ?.filter(
                 (player: Player) =>
                   player.player_nom

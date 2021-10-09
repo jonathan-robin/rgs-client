@@ -2,7 +2,8 @@ import Header from "../../components/common/header";
 import Footer from "../../components/common/footer";
 import SearchYear_draw from "../../components/searchYear/SearchYear_draw";
 import SearchYear_finale from "../../components/searchYear/SearchYear_finale";
-import { __draw } from "../../interface/__draw";
+import { __draw } from "../../classes/interface/__draw";
+import Player from "../../classes/player";
 
 /**
 * Renvoi les composants searchYear/draw/finale
@@ -10,7 +11,7 @@ import { __draw } from "../../interface/__draw";
 * @param { draw } draw : le tableau des tours 1 à 7
 * @return {JSX.Element} 
 */
-export default function searchYear(props:{year:number, draw:__draw}) {
+export default function searchYear(props:{year:number, draw:__draw, players:Player[]}):JSX.Element {
   return (
     <html>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -19,7 +20,7 @@ export default function searchYear(props:{year:number, draw:__draw}) {
 
       <body>
         <Header />
-        <SearchYear_finale year={props.year} draw={props.draw} /> 
+        <SearchYear_finale year={props.year} draw={props.draw}/> 
 
            {/* --> Début Illustration*/}
            <div className="row content illustration__searchYear">
@@ -36,7 +37,7 @@ export default function searchYear(props:{year:number, draw:__draw}) {
      
         {/* --> Début container background orange*/}
         <div className="background__search-year">
-        <SearchYear_draw year={props.year} draw={props.draw} /> 
+        <SearchYear_draw year={props.year} draw={props.draw}/> 
         </div>
         <Footer />
       </body>

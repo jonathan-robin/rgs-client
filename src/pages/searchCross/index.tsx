@@ -6,13 +6,13 @@ import { __match } from "../../classes/match";
 import {HandleClickYear} from "../../components/utils/handleClickYear";
 import {HandleClickProfile} from "../../components/utils/HandleClickProfile";
 import { useHistory } from "react-router";
+import Player from "../../classes/player";
+import { usePlayersContext } from "../../contex/PlayersContext";
 
 function SearchCross_results(props:{result:Match[] | null, profil:Profil, tour:number|null, year: number|null}):JSX.Element {
 
   const history = useHistory();
-  const handleClickProfil = (infos:any) => { 
-    console.log(infos)
-  }
+  const players = usePlayersContext();
 
   return (
     <div className="row modal__cross-search">
@@ -43,7 +43,7 @@ function SearchCross_results(props:{result:Match[] | null, profil:Profil, tour:n
                 if (res.infos_vainq.id === props.profil.id_joueur){
                     return (
                         <div className="row modal__match--cross-search modal__match--cross-search--win">
-                            <div className="col modal__match--cross-search--name" onClick={() => HandleClickProfile(history, res.infos_looser)} style={{cursor:'pointer'}}>
+                            <div className="col modal__match--cross-search--name" onClick={() => HandleClickProfile(history, res.infos_looser, players.players)} style={{cursor:'pointer'}}>
                                 {res.infos_looser.nom} {res.infos_looser.prenom} 
                             </div>
                             <div className="col modal__match--cross-search--year" onClick={() => HandleClickYear(history, res.annee)} style={{cursor:'pointer'}}>{res.annee}</div>
@@ -56,7 +56,7 @@ function SearchCross_results(props:{result:Match[] | null, profil:Profil, tour:n
                 }
                 return (
                     <div className="row modal__match--cross-search modal__match--cross-search--loose">
-                        <div className="col modal__match--cross-search--name" onClick={() => HandleClickProfile(history, res.infos_vainq)} style={{cursor:'pointer'}}>
+                        <div className="col modal__match--cross-search--name" onClick={() => HandleClickProfile(history, res.infos_vainq, players.players)} style={{cursor:'pointer'}}>
                         {res.infos_vainq.nom} {res.infos_vainq.prenom} 
                         </div>
                         <div className="col modal__match--cross-search--year" onClick={() => HandleClickYear(history, res.annee)} style={{cursor:'pointer'}}>{res.annee}</div>

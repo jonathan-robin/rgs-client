@@ -4,11 +4,13 @@ import Player from '../../classes/player';
 import Profil from '../../classes/profil';
 import SearchBull from '../SearchBull/SearchBull';
 import $ from 'jquery';
+import { usePlayersContext } from '../../contex/PlayersContext';
 
-export default function SearchBull_search(props:{players:Player[]}){ 
+export default function SearchBull_search(){ 
     const [inputValue, setInputValue] = useState<string>('');
     const [display,setDisplay] = useState<boolean>(false); 
-    const [profil, setProfil] = useState<Profil | null>()
+    const [profil, setProfil] = useState<Profil | null>(); 
+    const players = usePlayersContext()
 
     useEffect(() => {
         inputValue != "" &&
@@ -45,6 +47,7 @@ export default function SearchBull_search(props:{players:Player[]}){
             prenom: player.player_prenom,
             id: player.player_id,
             nat: player.player_nat,
+            players:players.players
           }),
         })
           .then((res) => res.json())
@@ -81,7 +84,7 @@ export default function SearchBull_search(props:{players:Player[]}){
         />
         {display && (
           <div className="proposition_player--searchBull hidden">
-            {props.players
+            {players.players
               ?.filter(
                 (player: Player) =>
                   player.player_nom

@@ -1,5 +1,10 @@
-export const HandleClickProfile = (history: any, joueur:any) => {
+import Player from "../../classes/player";
+import { usePlayersContext } from "../../contex/PlayersContext";
+
+export function HandleClickProfile(history: any, joueur:any, players:Player[]):void{
     
+  // const players = usePlayersContext();
+  console.log('joueur handleClickProfile', joueur)
     fetch("https://rgstatsapi.herokuapp.com/players", {
       method: "POST",
       headers: {
@@ -11,10 +16,11 @@ export const HandleClickProfile = (history: any, joueur:any) => {
         prenom: joueur.prenom,
         id: joueur.id,
         nat: joueur.nat,
+        players:players
       }),
     })
       .then((res) => res.json())
       .then((res) =>
-        history.push({ pathname: "/searchProfile", state: { profil: res } })
+         history.push({ pathname: "/searchProfile", state: { profil: res} })
       );
   }

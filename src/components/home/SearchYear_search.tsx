@@ -1,18 +1,23 @@
-import react, {useState, useEffect, EventHandler, SyntheticEvent} from 'react'; 
+import react, {useState, useEffect, useContext, SyntheticEvent} from 'react'; 
 import {
     BrowserRouter as Router,
     Link
   } from 'react-router-dom';
-import {__draw} from '../../interface/__draw';
+import {__draw} from '../../classes/interface/__draw';
 import $ from 'jquery';
+import Player from '../../classes/player';
+import { usePlayersContext } from '../../contex/PlayersContext';
 
  /**
   * Retourne le search Box de Home pour la recherche par édition
   */
 function SearchYear_search() {
+    const players = usePlayersContext();
     const [inputValue, setInputValue] = useState('');
     const [isValid, setIsValid] = useState(false);
     const [draw, setDraw] = useState<__draw>()
+
+    // console.log(props.players)
 
     useEffect(() => {
         if (isValid){ 

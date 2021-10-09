@@ -1,5 +1,5 @@
 import react, {useState, useEffect} from 'react';
-import {__player} from '../../interface/__player';
+import {__player} from '../../classes/interface/__player';
 import Player from '../../classes/player';
 /**
 * Retourne la liste des joueurs dans une liste déroulante
