@@ -1,7 +1,7 @@
 import Player from "../../classes/player";
 import { usePlayersContext } from "../../contex/PlayersContext";
 
-export function HandleClickProfile(history: any, joueur:any, players:Player[]):void{
+export function HandleClickProfile(history: any, joueur:any):void{
     
     fetch("https://rgstatsapi.herokuapp.com/players", {
       method: "POST",
@@ -14,7 +14,6 @@ export function HandleClickProfile(history: any, joueur:any, players:Player[]):v
         prenom: joueur.prenom,
         id: joueur.id,
         nat: joueur.nat,
-        players:players
       }),
     })
       .then((res) => res.json())

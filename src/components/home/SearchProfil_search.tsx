@@ -53,12 +53,12 @@ function SearchProfil_search() {
         prenom: player.player_prenom,
         id: player.player_id,
         nat: player.player_nat,
-        players:players.players
+        // players:players.players
       }),
     })
       .then((res) => res.json())
       .then((res) =>
-        history.push({ pathname: "/searchProfile", state: { profil: res, players:players.players} })
+        history.push({ pathname: "/searchProfile", state: { profil: res} })
       );
   }
 
@@ -89,7 +89,8 @@ function SearchProfil_search() {
               onInput={(event) => handleOnChange(event)}
             />
             {display && (
-              <div className="proposition_player hidden" id="proposition_player--SearchProfile--select" >
+              <div className="proposition_player hidden" 
+                id="proposition_player--SearchProfile--select" >
                 {players.players
                   ?.filter(
                     (player: Player) =>

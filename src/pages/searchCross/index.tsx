@@ -43,7 +43,7 @@ function SearchCross_results(props:{result:Match[] | null, profil:Profil, tour:n
                 if (res.infos_vainq.id === props.profil.id_joueur){
                     return (
                         <div className="row modal__match--cross-search modal__match--cross-search--win">
-                            <div className="col modal__match--cross-search--name" onClick={() => HandleClickProfile(history, res.infos_looser, players.players)} style={{cursor:'pointer'}}>
+                            <div className="col modal__match--cross-search--name" onClick={() => HandleClickProfile(history, res.infos_looser)} style={{cursor:'pointer'}}>
                                 {res.infos_looser.nom} {res.infos_looser.prenom} 
                             </div>
                             <div className="col modal__match--cross-search--year" onClick={() => HandleClickYear(history, res.annee)} style={{cursor:'pointer'}}>{res.annee}</div>
@@ -56,7 +56,7 @@ function SearchCross_results(props:{result:Match[] | null, profil:Profil, tour:n
                 }
                 return (
                     <div className="row modal__match--cross-search modal__match--cross-search--loose">
-                        <div className="col modal__match--cross-search--name" onClick={() => HandleClickProfile(history, res.infos_vainq, players.players)} style={{cursor:'pointer'}}>
+                        <div className="col modal__match--cross-search--name" onClick={() => HandleClickProfile(history, res.infos_vainq)} style={{cursor:'pointer'}}>
                         {res.infos_vainq.nom} {res.infos_vainq.prenom} 
                         </div>
                         <div className="col modal__match--cross-search--year" onClick={() => HandleClickYear(history, res.annee)} style={{cursor:'pointer'}}>{res.annee}</div>

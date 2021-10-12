@@ -6,7 +6,6 @@ import { useHistory } from 'react-router';
 import { HandleClickProfile } from '../utils/HandleClickProfile';
 import $ from 'jquery';
 import { HandleClickYear } from '../utils/handleClickYear';
-import Player from '../../classes/player';
 import { usePlayersContext } from '../../contex/PlayersContext';
 
 export interface bull{
@@ -44,13 +43,13 @@ export default function SearchBull(props:{profil:Profil}){
                     JOUEUR
                 </div>
                 <div className="modal__bull--selected" style={{cursor:'pointer'}}
-                onClick={() => {HandleClickProfile(history, {nom:profil.nom_joueur, prenom:profil.prenom_joueur,id:profil.id_joueur, nat:profil.nat_joueur}, players.players)}}>
+                onClick={() => {HandleClickProfile(history, {nom:profil.nom_joueur, prenom:profil.prenom_joueur,id:profil.id_joueur, nat:profil.nat_joueur})}}>
                     {profil.nom_joueur} {profil.prenom_joueur}
                 </div>
                 {bull && 
                 <>
                 <div className="modal__bull--info">BETE NOIRE</div>
-                <div className="modal__bull--info" onClick={() => {HandleClickProfile(history, {nom:bull.joueur[0].nom, prenom:bull.joueur[0].prenom,id:bull.joueur[0].idjoueur, nat:bull.joueur[0].nat}, players.players)}} style={{cursor:'pointer'}}>{bull.joueur[0].nom} {bull.joueur[0].prenom}</div>
+                <div className="modal__bull--info" onClick={() => {HandleClickProfile(history, {nom:bull.joueur[0].nom, prenom:bull.joueur[0].prenom,id:bull.joueur[0].idjoueur, nat:bull.joueur[0].nat})}} style={{cursor:'pointer'}}>{bull.joueur[0].nom} {bull.joueur[0].prenom}</div>
                 <div className="modal__bull--info">{bull.matchs.length} Défaites</div>
                 <div className="modal__bull--matchList">
 

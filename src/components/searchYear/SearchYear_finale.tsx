@@ -50,7 +50,7 @@ function SearchYear_finale(props:{year:number, draw:__draw}) {
                         <span className="bubble bubble__search-year--result">
                           <div style={{display:'flex'}}>
                             <img className="draw__flag" src={require('../../resources/flags/'+player.player_nat+'.png').default} />
-                            <div className="resultat__match--name" onClick={() => HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat}, players.players)} style={{cursor:'pointer'}}>
+                            <div className="resultat__match--name" onClick={() => HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat})} style={{cursor:'pointer'}}>
                               {player.player_nom} {player.player_prenom}
                             </div>
                           </div>
@@ -69,7 +69,7 @@ function SearchYear_finale(props:{year:number, draw:__draw}) {
                     <span className="bubble bubble__search-year--result">
                       <div style={{display:'flex'}}>
                         <img className="draw__flag" src={require('../../resources/flags/'+player.player_nat+'.png').default} />
-                        <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat}, players.players)} style={{cursor:'pointer'}}>
+                        <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat})} style={{cursor:'pointer'}}>
                           {player.player_nom} {player.player_prenom} 
                         </div>
                       </div>
@@ -88,7 +88,7 @@ function SearchYear_finale(props:{year:number, draw:__draw}) {
                   return (
                     <span className="bubble bubble__search-year--result">
                       <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+player.player_nat+'.png').default} />
-                        <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat}, players.players)} style={{cursor:'pointer'}}>
+                        <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat})} style={{cursor:'pointer'}}>
                           {player.player_nom} {player.player_prenom}
                         </div>
                       </div>

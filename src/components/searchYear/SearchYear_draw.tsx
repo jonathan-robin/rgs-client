@@ -71,7 +71,7 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                                 <span className="bubble bubble__search-year--result">
                                 <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+idj1.nat+'.png').default} />
                                     <div className="resultat__match--name resultat__match--name--first-round" style={{cursor:'pointer'}}
-                                    onClick={() => {HandleClickProfile(history, idj1, players.players)}} >{idj1.nom} {idj1.prenom}
+                                    onClick={() => {HandleClickProfile(history, idj1)}} >{idj1.nom} {idj1.prenom}
                                     </div>
                                     </div>
                                 </span>
@@ -82,7 +82,7 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                           <span className="bubble bubble__search-year--result">
                           <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+idj2.nat+'.png').default} />
                             <div className="resultat__match--name resultat__match--name--first-round" style={{cursor:'pointer'}}
-                             onClick={() => {HandleClickProfile(history, idj2, players.players)}}>{idj2.nom} {idj2.prenom}
+                             onClick={() => {HandleClickProfile(history, idj2)}}>{idj2.nom} {idj2.prenom}
                             </div>
                             </div>
                           </span>
@@ -120,7 +120,7 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                             <span className="bubble bubble__search-year--result">
                             <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                 <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {vainq.prenom}
+                                onClick={() => HandleClickProfile(history, vainq)}>{vainq.nom} {vainq.prenom}
                                 </div></div>
                                 <div><div className="row resultat__match--score">{score}</div></div>
                             </span>
@@ -156,7 +156,7 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                                 <span className="bubble bubble__search-year--result">
                             <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                     <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                    onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {vainq.prenom}
+                                    onClick={() => HandleClickProfile(history, vainq)}>{vainq.nom} {vainq.prenom}
                                     </div>
                                     </div>
                                     <div className="row resultat__match--score">{score}</div>
@@ -191,7 +191,7 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                                     <span className="bubble bubble__search-year--result">
                                     <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                     <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                    onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {match.infos_vainq.prenom}
+                                    onClick={() => HandleClickProfile(history, vainq)}>{vainq.nom} {match.infos_vainq.prenom}
                                     </div>
                                     </div>
                                     <div className="row resultat__match--score">{score}</div>
@@ -225,7 +225,7 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                                     <span className="bubble bubble__search-year--result">
                                     <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                     <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                    onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {vainq.prenom}
+                                    onClick={() => HandleClickProfile(history, vainq)}>{vainq.nom} {vainq.prenom}
                                     </div>
                                     </div>
                                     <div className="row resultat__match--score">{score}</div>
@@ -259,7 +259,7 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                                     <span className="bubble bubble__search-year--result">
                                     <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                     <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                    onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {vainq.prenom}
+                                    onClick={() => HandleClickProfile(history, vainq)}>{vainq.nom} {vainq.prenom}
                                     </div>
                                     </div>
                                     <div className="row resultat__match--score">{score}</div>
