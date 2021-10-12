@@ -65,7 +65,6 @@ function Affiches(props: RouteComponentProps<{}, any, url | any>):JSX.Element  {
         <div className="background__search-year affiche">
             <div className="grid_affiches">
               {new Array(20).fill(undefined).map((affiche, index:number) => { 
-                    console.log('map 1 ')
                     return (
                         <img src={require('../../resources/Affiches/'+ (2021-index) +'.jpg').default} alt={"Affiche officielle de l'édition "+ (2021-index) + "de Rolland Garros"}
                         onClick={(event) => handleClickAffiche(event)} data-original={('../../resources/Affiches/'+(2021-index)+'.jpg')} className="grid_affiche_img imgAffiche carousel_item" />

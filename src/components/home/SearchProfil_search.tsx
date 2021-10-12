@@ -20,28 +20,27 @@ function SearchProfil_search() {
   const [display, setDisplay] = useState<boolean>(false);
   const history = useHistory();
 
-  useEffect(() => {
-    inputValue != "" &&
-      document.getElementById("root")?.addEventListener("click", function () {
-        document
-          .getElementsByClassName("proposition_player")[0]
-          ?.classList.add("hidden");
-      });
-    return () => {
-      document
-        .getElementById("root")
-        ?.removeEventListener("click", function () {});
-    };
-  }, [inputValue]);
+  // Lorsqu'un clic autre part que sur l'input on le cache
+  document.addEventListener("click", function (e:any) {
+    if (e.target.id !== 'proposition_player--SearchProfile'){
+      document.getElementById('proposition_player--SearchProfile--select')?.classList.add("hidden");
+    }
+  });
 
+  // Lorsqu'un clic sur input on affiche
+  const handleClickInput = () => { 
+    if (inputValue !== '') {  document.getElementById('proposition_player--SearchProfile--select')?.classList.remove('hidden') }
+    else { document.getElementById('proposition_player--SearchProfile--select')?.classList.add('hidden') }
+  }
+
+  // onInput si value est vide on cache sinon on affiche
   const handleOnChange = (event: any) => {
     setInputValue(event.target.value);
-    setDisplay(true);
-    document
-      .getElementsByClassName("proposition_player")[0]
-      ?.classList.remove("hidden");
+    if (event.target.value != ''){ document.getElementById('proposition_player--SearchProfile--select')?.classList.remove('hidden'); setDisplay(true); }
+    else{ document.getElementById('proposition_player--SearchProfile--select')?.classList.add('hidden'); setDisplay(false) }
   };
 
+  //Fetch POST on /players pour récupérer infos profil, ensuite on push sur /searchProfile
   function HandleClickPlayer(event: any, player: Player) {
     fetch("https://rgstatsapi.herokuapp.com/players", {
       method: "POST",
@@ -81,14 +80,16 @@ function SearchProfil_search() {
         <div className="content-box__search content-box__search--profil col">
           <div style={{ display: "inline" }}>
             <input
+              id="proposition_player--SearchProfile"
               className="input form-control input--profil"
               type="text"
               placeholder="Nom d'un joueur..."
               value={inputValue}
-              onChange={(event) => handleOnChange(event)}
+              onClick={() => handleClickInput()}
+              onInput={(event) => handleOnChange(event)}
             />
             {display && (
-              <div className="proposition_player hidden">
+              <div className="proposition_player hidden" id="proposition_player--SearchProfile--select" >
                 {players.players
                   ?.filter(
                     (player: Player) =>

@@ -24,11 +24,6 @@ export default function SearchProfile(props: RouteComponentProps<{}, any, profil
   },[props])
 
   const players = usePlayersContext();
-
-  useEffect(() => {
-    console.log(props.location.state.profile)
-  },[])
-
   return (
     <html>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>

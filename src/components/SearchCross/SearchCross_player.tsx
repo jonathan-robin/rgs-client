@@ -13,23 +13,28 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
   const [display, setDisplay] = useState(false);
   const players = usePlayersContext();
 
-  console.log('searchPlayer global context', players.players)
-
   useEffect(() => { 
     setInputValue('');
   },[props.resetInputValue])
 
-  useEffect(() => { 
-    inputValue != '' && document.getElementById('root')?.addEventListener('click',function(){
-        document.getElementsByClassName('proposition_player--searchCross')[0]?.classList.add('hidden');
-    })
-    return () => { document.getElementById('root')?.removeEventListener('click', function(){}) }
-},[inputValue])
-
+  // Lorsqu'un clic autre part que sur l'input on le cache
+  document.addEventListener("click", function (e:any) {
+    if (e.target.id !== 'proposition_player--SearchCross'){
+      document.getElementById('proposition_player--SearchCross--select')?.classList.add("hidden");
+    }
+  });
+  
+  // Lorsqu'un clic sur input on affiche
+  const handleClickInput = () => { 
+    if (inputValue !== '') {  document.getElementById('proposition_player--SearchCross--select')?.classList.remove('hidden') }
+    else { document.getElementById('proposition_player--SearchCross--select')?.classList.add('hidden') }
+  }
+  
+    // onInput si value est vide on cache sinon on affiche
   const handleOnChange = (event: any) => {
     setInputValue(event.target.value);
-    setDisplay(true);
-    document.getElementsByClassName('proposition_player--searchCross')[0]?.classList.remove('hidden');
+    if (event.target.value != ''){ document.getElementById('proposition_player--SearchCross--select')?.classList.remove('hidden'); setDisplay(true); }
+    else{ document.getElementById('proposition_player--SearchCross--select')?.classList.add('hidden'); setDisplay(false) }
   };
 
   function HandleClickPlayer(event: any, player: Player) {
@@ -57,14 +62,17 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
       <label className="content-box__search--cross-search--name">
         <p>Nom du Joueur</p>
         <input
+          id="proposition_player--SearchCross"
           className="input form-control input--profil"
           type="text"
           placeholder="Nom d'un joueur..."
           value={inputValue}
+          onClick={() => handleClickInput()}
           onChange={(event) => handleOnChange(event)}
         />
         {display && (
-          <div className="proposition_player--searchCross hidden">
+          <div className="proposition_player--searchCross hidden"
+            id="proposition_player--SearchCross--select">
             {players.players
               ?.filter(
                 (player: Player) =>

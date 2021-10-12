@@ -23,7 +23,6 @@ function SearchYear_finale(props:{year:number, draw:__draw}) {
   const infoDemi_b = new Match(props.draw.tour6[1]);
   const history = useHistory();
   const players= usePlayersContext();
-console.log(props.draw)
 
     return (
       <div>

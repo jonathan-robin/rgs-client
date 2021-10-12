@@ -3,8 +3,6 @@ import { usePlayersContext } from "../../contex/PlayersContext";
 
 export function HandleClickProfile(history: any, joueur:any, players:Player[]):void{
     
-  // const players = usePlayersContext();
-  console.log('joueur handleClickProfile', joueur)
     fetch("https://rgstatsapi.herokuapp.com/players", {
       method: "POST",
       headers: {
@@ -21,6 +19,6 @@ export function HandleClickProfile(history: any, joueur:any, players:Player[]):v
     })
       .then((res) => res.json())
       .then((res) =>
-         history.push({ pathname: "/searchProfile", state: { profil: res} })
+         history.push({ pathname: "/searchProfile", state: { profil: res, } })
       );
   }

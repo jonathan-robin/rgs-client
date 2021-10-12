@@ -12,26 +12,24 @@ export default function SearchBull_search(){
     const [profil, setProfil] = useState<Profil | null>(); 
     const players = usePlayersContext()
 
-    useEffect(() => {
-        inputValue != "" &&
-          document.getElementById("root")?.addEventListener("click", function () {
-            document
-              .getElementsByClassName("proposition_player--searchBull")[0]
-              ?.classList.add("hidden");
-          });
-        return () => {
-          document
-            .getElementById("root")
-            ?.removeEventListener("click", function () {});
-        };
-      }, [inputValue]);
+    // Lorsqu'un clic autre part que sur l'input on le cache
+  document.addEventListener("click", function (e:any) {
+    if (e.target.id !== 'proposition_player--SearchBull'){
+      document.getElementById('proposition_player--SearchBull--select')?.classList.add("hidden");
+    }
+  });
+  
+  // Lorsqu'un clic sur input on affiche
+  const handleClickInput = () => { 
+    if (inputValue !== '') {  document.getElementById('proposition_player--SearchBull--select')?.classList.remove('hidden') }
+    else { document.getElementById('proposition_player--SearchBull--select')?.classList.add('hidden') }
+  }
 
+  // onInput si value est vide on cache sinon on affiche
     const handleOnChange = (event: any) => {
         setInputValue(event.target.value);
-        setDisplay(true);
-        document
-          .getElementsByClassName("proposition_player--searchBull hidden")[0]
-          ?.classList.remove("hidden");
+        if (event.target.value != ''){ document.getElementById('proposition_player--SearchBull--select')?.classList.remove('hidden'); setDisplay(true); }
+        else{ document.getElementById('proposition_player--SearchBull--select')?.classList.add('hidden'); setDisplay(false) }
       };
     
       function HandleClickPlayer(event: any, player: Player) {
@@ -51,10 +49,11 @@ export default function SearchBull_search(){
           }),
         })
           .then((res) => res.json())
-          .then((res) => setProfil(res));
+          .then((res) => setProfil(res))
+          .then((res) => document.getElementsByClassName("grid__modal__bull")[0].scrollIntoView({behavior: "smooth", block: "end", inline: "end"}))
           setInputValue(player.player_nom + ' ' + player.player_prenom)
-          $('html,body').animate({
-            scrollTop: $(".grid__modal__bull").offset()?.top});
+          document.getElementById('proposition_player--SearchBull--select')?.classList.add('hidden')
+          setDisplay(false)
     };
 
       const handleClickReset = () => { 
@@ -77,13 +76,17 @@ export default function SearchBull_search(){
             <div className="content-box__search content-box__search--bull col-8">
               <input
           className="input form-control input--profil"
+          id="proposition_player--SearchBull"
           type="text"
           placeholder="Nom d'un joueur..."
           value={inputValue}
+          onClick={() => handleClickInput()}
           onChange={(event) => handleOnChange(event)}
         />
         {display && (
-          <div className="proposition_player--searchBull hidden">
+          <div className="proposition_player--searchBull hidden"
+          id="proposition_player--SearchBull--select"
+          >
             {players.players
               ?.filter(
                 (player: Player) =>

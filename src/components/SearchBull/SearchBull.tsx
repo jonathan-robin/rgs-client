@@ -22,10 +22,6 @@ export default function SearchBull(props:{profil:Profil}){
     const players = usePlayersContext();
 
     useEffect(() => { 
-        console.log(bull?.joueur[0])
-    },[])
-
-    useEffect(() => { 
         fetch('https://rgstatsapi.herokuapp.com/bull', {
             method:'POST',
             headers: {
@@ -40,7 +36,6 @@ export default function SearchBull(props:{profil:Profil}){
             scrollTop: $(".grid__modal__bull").offset()?.top});
     },[props.profil])
 
-    console.log(bull);
     return(
         <div className="modal__bull">
         <img src={require('../../resources/bull/bull.svg').default} className='img--bull'/>
@@ -62,10 +57,10 @@ export default function SearchBull(props:{profil:Profil}){
                 {bull.matchs.map((m,index) => { 
                     let match = new Match(m);
                     return(
-                        <div className="modal__bull--match">
-                        <div className="modal__bull--match--tour">{match.tourString}</div>
-                        <div className="modal__bull--match--year" style={{cursor:'pointer'}} onClick={() => {HandleClickYear(history, match.annee)}} >{match.annee}</div>
-                        <div className="modal__bull--match--score">{match.infos_vainq.score}</div>
+                        <div className="modal__bull--match" key={`match_`+index}>
+                        <div className="modal__bull--match--tour"  key={`tour`+index}>{match.tourString}</div>
+                        <div className="modal__bull--match--year"  key={`year`+index}style={{cursor:'pointer'}} onClick={() => {HandleClickYear(history, match.annee)}} >{match.annee}</div>
+                        <div className="modal__bull--match--score" key={`score`+index}>{match.infos_vainq.score}</div>
                     </div>
                     )
                 })}

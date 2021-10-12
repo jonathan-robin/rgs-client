@@ -26,8 +26,6 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
         })))
       }
 
-console.log(props.draw)
-
     return (
         <div className="background__search-year">
             <div className='row rowsearch'>
@@ -55,7 +53,6 @@ console.log(props.draw)
                             idj2 = match.infos_looser;
                         }
                         // match.match.VAINQ === match.match.IDJ1 ? () => {idj2 = match.infos_looser; idj1 = match.infos_vainq} : () => {idj1 = match.infos_looser; idj2 = match.infos_vainq}
-                        console.log(match);
                         return (
                             <>
                             <div className='div200'>

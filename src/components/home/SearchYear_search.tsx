@@ -17,8 +17,6 @@ function SearchYear_search() {
     const [isValid, setIsValid] = useState(false);
     const [draw, setDraw] = useState<__draw>()
 
-    // console.log(props.players)
-
     useEffect(() => {
         if (isValid){ 
             $('#selectInfosSpanSearchYear').removeAttr('data-descr')
@@ -54,20 +52,13 @@ function SearchYear_search() {
                 <div className="content-box__search content-box__search--year col">
                 <input className="input form-control input--year" type="text" placeholder="Entre 1968 et 2021..." onChange={handleChangeInput}/>
                     {/* <span className='tooltiptext'>Veuillez rentrer une année entre 1968 et 2021.</span> */}
-                    <Link to={{pathname:'/searchYear', state:{year:inputValue}}}>
-                    {/* <span id='selectInfosSpan' className="selectInfos" data-descr="Veuillez d'abord sélectionner un joueur !">
-        <select className="form-select" style={{pointerEvents: props.disabled ? 'none' : 'all'}} name="year" id="year-select" onChange={event => handleOnChangeSelectedYear(event)}>
-            <option id='Select-year' value="unselected">Année</option>
-            {new Array(52).fill(undefined).map((v,i) => {
-                return (<option className='optionYear' value={v} key={i}>{2019-i}</option>)
-            })}
-        </select></span> */}
                     <span id='selectInfosSpanSearchYear' className="selectInfos" data-descr="Veuillez d'abord rentrer une année valide !">
+                    <Link style={{pointerEvents: isValid ? 'all' : 'none'}} to={{pathname:'/searchYear', state:{year:inputValue}}}>
                         <button style={{pointerEvents: isValid ? 'all' : 'none'}} id="button_search-year" onClick={handleOnClickButton} data-toggle="tooltip" data-placement="left" type="button" className="button button__search--year">
                                 Rechercher
                         </button>
-                    </span>
                     </Link>
+                    </span>
                 </div>
             </div>
             {/* <-- Fin Recherche par Année */}

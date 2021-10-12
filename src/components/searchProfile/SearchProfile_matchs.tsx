@@ -24,12 +24,6 @@ function SearchProfile_matchs(props:{matchList:__match[], joueur:Profil}):any {
      * @param { String } direction
      */
 
-    // const handleClickYear = (year:number) => { 
-    //     history.push({pathname:'/searchYear', state:{year:year}})
-    // }
-    console.log(players)
-    console.log(props);
-
     return (
         <>
             <div className="content__player content__player--match-list">
