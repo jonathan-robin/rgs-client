@@ -15,16 +15,16 @@ function SearchCross_year(props:{disabled:boolean,resetInputValue:any, handleSet
     },[props.resetInputValue, props.disabled])
 
     const handleOnChangeSelectedYear = (event:any) => { 
-        props.handleSetYear(event.currentTarget.value)
+        props.handleSetYear(event.target[event.target.selectedIndex].getAttribute('data-value'))
     }
 
     return (
         <label className='content-box__search--cross-search--year'><p >Année</p>
             <span id='selectInfosSpan' className="selectInfos" data-descr="Veuillez d'abord sélectionner un joueur !">
         <select className="form-select" style={{pointerEvents: props.disabled ? 'none' : 'all'}} name="year" id="year-select" onChange={event => handleOnChangeSelectedYear(event)}>
-            <option id='Select-year' value="unselected">Année</option>
+            <option id='Select-year' data-value={undefined}>Année</option>
             {new Array(52).fill(undefined).map((v,i) => {
-                return (<option className='optionYear' value={v} key={i}>{2019-i}</option>)
+                return (<option className='optionYear' data-value={2019-i} key={i}>{2019-i}</option>)
             })}
         </select></span></label>
     )

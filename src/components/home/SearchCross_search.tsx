@@ -13,20 +13,21 @@ import { usePlayersContext } from "../../contex/PlayersContext";
 
  function SearchCross_search() {
     const [profil, setProfil] = useState<Profil | null>(null);
-    const [tour, setTour] = useState<number | null>(null);
+    const [tour, setTour] = useState<number | null >(null);
     const [year, setYear] = useState<number | null>(null);
     const [result, setResult] = useState<Match[] | null>(null);
     const [reset, setReset] = useState(false);
     const [disabled, setDisabled] = useState<boolean>(true);
     const players = usePlayersContext();
 
+
   useEffect(() => { 
-    tour != undefined && handleSetTour(tour); 
-    year != undefined && handleSetYear(year)
+    tour != null && handleSetTour(tour); 
+    year != null && handleSetYear(year)
   },[profil])
 
   useEffect(() => {
-    if ((!Number.isInteger(tour) && !Number.isInteger(year)) && profil){ 
+    if (tour === undefined && year === undefined && profil){ 
       setResult(profil.matchs.map((match:__match,index:number) => {
         return new Match(match)
       }))
@@ -46,13 +47,15 @@ import { usePlayersContext } from "../../contex/PlayersContext";
        setTour(null); 
        setYear(null); 
        setResult(null);
-       setReset(true);
+       setReset(!reset);
        setDisabled(true);
      }
 
     const handleSetTour = (tour:number) => {
       setTour(tour);
-      setResult(null);
+      if (tour === null && year === null && profil){
+        return handleSetProfil(profil);
+      }
       fetch('https://rgstatsapi.herokuapp.com/cross', {
           method:'POST',
           headers: {
@@ -69,6 +72,9 @@ import { usePlayersContext } from "../../contex/PlayersContext";
 
     const handleSetYear = (year:number) => {
         setYear(year);
+        if (tour === null && year === null && profil){
+          return handleSetProfil(profil);
+        }
         setResult(null);
         fetch('https://rgstatsapi.herokuapp.com/cross', {
             method:'POST',

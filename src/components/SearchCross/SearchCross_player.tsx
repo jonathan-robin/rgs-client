@@ -14,7 +14,7 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
   const players = usePlayersContext();
 
   useEffect(() => { 
-    setInputValue('');
+    return () => {setInputValue('')};
   },[props.resetInputValue])
 
   // Lorsqu'un clic autre part que sur l'input on le cache
@@ -29,7 +29,7 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
     if (inputValue !== '') {  document.getElementById('proposition_player--SearchCross--select')?.classList.remove('hidden') }
     else { document.getElementById('proposition_player--SearchCross--select')?.classList.add('hidden') }
   }
-  
+
     // onInput si value est vide on cache sinon on affiche
   const handleOnChange = (event: any) => {
     setInputValue(event.target.value);
@@ -55,6 +55,8 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
       .then((res) => res.json())
       .then((res) => {return props.handleSetProfil(res)});
       setInputValue(player.player_nom + ' ' + player.player_prenom)
+      document.getElementById('proposition_player--SearchCross--select')?.classList.add('hidden');
+      setDisplay(false)
   }
 
   return (
