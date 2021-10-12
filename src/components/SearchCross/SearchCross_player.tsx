@@ -8,7 +8,7 @@ import { usePlayersContext } from "../../contex/PlayersContext";
 /**
  * Retourne input player pour la recherche croisée
  */
-function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
+function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any, isLoading:any}) {
   const [inputValue, setInputValue] = useState("");
   const [display, setDisplay] = useState(false);
   const players = usePlayersContext();
@@ -38,6 +38,7 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
   };
 
   function HandleClickPlayer(event: any, player: Player) {
+    props.isLoading(true);
     fetch("https://rgstatsapi.herokuapp.com/players", {
       method: "POST",
       headers: {
@@ -52,8 +53,10 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
       }),
     })
       .then((res) => res.json())
-      .then((res) => {return props.handleSetProfil(res)});
-      setInputValue(player.player_nom + ' ' + player.player_prenom)
+      .then((res) => {return props.handleSetProfil(res)})
+      .then((res) => props.isLoading(false))
+      .then((res) => document.getElementsByClassName('modal__cross-search')[0].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}))
+      .then((res) => setInputValue(player.player_nom + ' ' + player.player_prenom));
       document.getElementById('proposition_player--SearchCross--select')?.classList.add('hidden');
       setDisplay(false)
   }

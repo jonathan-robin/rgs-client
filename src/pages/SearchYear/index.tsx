@@ -4,6 +4,7 @@ import SearchYear_draw from "../../components/searchYear/SearchYear_draw";
 import SearchYear_finale from "../../components/searchYear/SearchYear_finale";
 import { __draw } from "../../classes/interface/__draw";
 import Player from "../../classes/player";
+import react, {useEffect, useState} from 'react';
 
 /**
 * Renvoi les composants searchYear/draw/finale
@@ -11,7 +12,13 @@ import Player from "../../classes/player";
 * @param { draw } draw : le tableau des tours 1 à 7
 * @return {JSX.Element} 
 */
-export default function searchYear(props:{year:number, draw:__draw}):JSX.Element {
+export default function SearchYear(props:{year:number, draw:__draw}):JSX.Element {
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => { 
+    setIsLoading(true);
+  },[])
+
   return (
     <html>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -19,6 +26,8 @@ export default function searchYear(props:{year:number, draw:__draw}):JSX.Element
       <link rel="stylesheet" href="../styles/Home/Home.css" />
 
       <body>
+        {isLoading ? 
+        <>
         <Header />
         <SearchYear_finale year={props.year} draw={props.draw}/> 
 
@@ -40,6 +49,13 @@ export default function searchYear(props:{year:number, draw:__draw}):JSX.Element
         <SearchYear_draw year={props.year} draw={props.draw}/> 
         </div>
         <Footer />
+        </> :
+        <div className='LoadingScreen'>
+          <div className="ring">
+          <span className='spanRing'></span>
+          </div>
+        </div>
+}
       </body>
     </html>
   );

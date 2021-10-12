@@ -7,6 +7,7 @@ import $ from 'jquery';
 import { usePlayersContext } from '../../contex/PlayersContext';
 
 export default function SearchBull_search(){ 
+    const [isLoading, setIsLoading] = useState(false);
     const [inputValue, setInputValue] = useState<string>('');
     const [display,setDisplay] = useState<boolean>(false); 
     const [profil, setProfil] = useState<Profil | null>(); 
@@ -33,6 +34,7 @@ export default function SearchBull_search(){
       };
     
       function HandleClickPlayer(event: any, player: Player) {
+        setIsLoading(true);
         setProfil(null)
         fetch("https://rgstatsapi.herokuapp.com/players", {
           method: "POST",
@@ -49,8 +51,9 @@ export default function SearchBull_search(){
         })
           .then((res) => res.json())
           .then((res) => setProfil(res))
-          .then((res) => document.getElementsByClassName("grid__modal__bull")[0].scrollIntoView({behavior: "smooth", block: "end", inline: "end"}))
-          setInputValue(player.player_nom + ' ' + player.player_prenom)
+          .then((res) => setIsLoading(false))
+          .then((res) => setInputValue(player.player_nom + ' ' + player.player_prenom))
+          .then((res) => document.getElementsByClassName("grid__modal__bull")[0].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}))
           document.getElementById('proposition_player--SearchBull--select')?.classList.add('hidden')
           setDisplay(false)
     };
@@ -60,7 +63,8 @@ export default function SearchBull_search(){
         setProfil(null);
       }
 
-    return(
+    return(<>
+      {!isLoading ? 
         <div className="container">
         <div className="row">
           <div className="content-box content-box--bull col-12">
@@ -127,5 +131,11 @@ export default function SearchBull_search(){
         </div>
         {profil && <SearchBull profil={profil}/>}
       </div>
+:  <div className='LoadingScreen'>
+<div className="ring">
+<span className='spanRing'></span>
+</div>
+</div>}
+</> 
     )
 }

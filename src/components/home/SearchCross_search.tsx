@@ -11,7 +11,7 @@ import Match from "../../classes/match";
 import { __match } from "../../classes/match";
 import { usePlayersContext } from "../../contex/PlayersContext";
 
- function SearchCross_search() {
+ function SearchCross_search(props:{isLoading:any}) {
     const [profil, setProfil] = useState<Profil | null>(null);
     const [tour, setTour] = useState<number | null >(null);
     const [year, setYear] = useState<number | null>(null);
@@ -19,6 +19,7 @@ import { usePlayersContext } from "../../contex/PlayersContext";
     const [reset, setReset] = useState(false);
     const [disabled, setDisabled] = useState<boolean>(true);
     const players = usePlayersContext();
+    const [isLoading, setIsLoading] = useState(false);
 
 
   useEffect(() => { 
@@ -52,8 +53,10 @@ import { usePlayersContext } from "../../contex/PlayersContext";
      }
 
     const handleSetTour = (tour:number) => {
+      setIsLoading(true);
       setTour(tour);
       if (tour === null && year === null && profil){
+        setIsLoading(false);
         return handleSetProfil(profil);
       }
       fetch('https://rgstatsapi.herokuapp.com/cross', {
@@ -68,11 +71,15 @@ import { usePlayersContext } from "../../contex/PlayersContext";
       .then(res => res.json())
       .then((res) => {return setResult(res.map((match:__match,index:number) => {
         return new Match(match)}))})
+      .then((res) => setIsLoading(false))
+      .then((res) => document.getElementsByClassName('modal__cross-search')[0].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}));
     }
 
     const handleSetYear = (year:number) => {
+      setIsLoading(true);
         setYear(year);
         if (tour === null && year === null && profil){
+          setIsLoading(false);
           return handleSetProfil(profil);
         }
         setResult(null);
@@ -89,9 +96,14 @@ import { usePlayersContext } from "../../contex/PlayersContext";
         .then(res => res.json())
         .then((res) => {return setResult(res.map((match:__match,index:number) => {
           return new Match(match)}))})
+        .then((res) => setIsLoading(false))
+        .then((res) => document.getElementsByClassName('modal__cross-search')[0].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}));
+
     }
 
   return (
+    <>
+    {!isLoading ? 
     <>
     <div className='outer-cross'>
       <div className="content-box content-box--cross-search col-12">
@@ -127,7 +139,7 @@ import { usePlayersContext } from "../../contex/PlayersContext";
 
       <div className='input-group'> 
         <div className="content-box__search content-box__search--cross-search col">
-            <SearchCross_player resetInputValue={reset} handleSetProfil={handleSetProfil}/>
+            <SearchCross_player isLoading={setIsLoading} resetInputValue={reset} handleSetProfil={handleSetProfil}/>
             <SearchCross_year disabled={disabled} resetInputValue={reset} handleSetYear={handleSetYear} />
             </div>
         <div className="content-box__search content-box__search--cross-search col">
@@ -137,8 +149,15 @@ import { usePlayersContext } from "../../contex/PlayersContext";
 
       </div>
     </div>
+         
     {profil && <SearchCross_results result={result} profil={profil} tour={tour} year={year}/>
     }
+    </>
+:  <div className='LoadingScreen'>
+<div className="ring">
+<span className='spanRing'></span>
+</div>
+</div>}
     </>
   );
 }

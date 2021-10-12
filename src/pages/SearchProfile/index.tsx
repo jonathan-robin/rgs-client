@@ -6,7 +6,7 @@ import SearchProfile_matchs from "../../components/searchProfile/SearchProfile_m
 import {RouteComponentProps} from 'react-router-dom';
 import Profil from '../../classes/profil';
 import { __profil } from "../../classes/interface/__profil";
-import react, {useEffect} from 'react';
+import react, {useEffect, useState} from 'react';
 import { usePlayersContext } from "../../contex/PlayersContext";
 
 type profile = {
@@ -18,10 +18,15 @@ type profile = {
 * @return {JSX.Element} 
 */
 export default function SearchProfile(props: RouteComponentProps<{}, any, profile | any>):JSX.Element {
-  
+  const [isLoading, setIsLoading] = useState(false); 
+
   useEffect(() => {
     window.scrollTo(0, 0);
   },[props])
+
+  useEffect(() => { 
+    setIsLoading(true); 
+  },[])
 
   const players = usePlayersContext();
   return (
@@ -31,6 +36,8 @@ export default function SearchProfile(props: RouteComponentProps<{}, any, profil
       <link rel="stylesheet" href="../styles/Home/Home.css" />
 
       <body>
+        {isLoading ?
+        <>
         <Header />
 
         {/* --> Début Illustration*/}
@@ -67,7 +74,14 @@ export default function SearchProfile(props: RouteComponentProps<{}, any, profil
         
         {/* <-- Fin background orange */}
         </div>
-      <Footer />
+      <Footer /> </>
+      :
+      <div className='LoadingScreen'>
+        <div className="ring">
+        <span className='spanRing'></span>
+        </div>
+      </div>
+        }
     </body>
   </html>
   );

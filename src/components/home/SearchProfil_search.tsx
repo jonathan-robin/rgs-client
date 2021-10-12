@@ -12,7 +12,7 @@ import { usePlayersContext } from "../../contex/PlayersContext";
 /**
  * Retourne le search Box de Home pour la recherche par Profil
  */
-function SearchProfil_search() {
+function SearchProfil_search(props:{isLoading:any}) {
   
   const [profil, setProfil] = useState<Profil>();
   const players = usePlayersContext();
@@ -42,6 +42,7 @@ function SearchProfil_search() {
 
   //Fetch POST on /players pour récupérer infos profil, ensuite on push sur /searchProfile
   function HandleClickPlayer(event: any, player: Player) {
+    props.isLoading(true)
     fetch("https://rgstatsapi.herokuapp.com/players", {
       method: "POST",
       headers: {

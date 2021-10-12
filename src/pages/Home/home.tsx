@@ -18,16 +18,22 @@ import {
 
 function Home() {
   
-
+  const [isLoading, setIsLoading] = useState(false); 
+  const [searchCrossLoading, setSearchCrossLoading] = useState(false);
 
   return (
+    
       <html>
         <head>
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossOrigin="anonymous" />
           <link rel="stylesheet" href="../styles/Home/Home.css"/>
         </head>
+        
         <body>
+        {!isLoading ? 
+        !searchCrossLoading?
+        <>
           <Header />
 
           {/* --> Début Illustration*/}
@@ -90,7 +96,7 @@ function Home() {
 
 
         {/* --> Début Recherche par Profil */}
-            <SearchProfil_search/>
+            <SearchProfil_search isLoading={setIsLoading}/>
         {/* <-- Fin Recherche par profil */}
             </div>
         {/* <-- Fin background orange*/}
@@ -101,7 +107,7 @@ function Home() {
         {/* <-- Fin SVG shape orange BOTTOM*/}
             
         {/* --> Début SearchCross*/}
-            <SearchCross_search/>
+            <SearchCross_search isLoading={setSearchCrossLoading}/>
         {/* <-- Fin SearchCross*/}
 
         {/* --> Début SVG shape vert*/}
@@ -116,6 +122,18 @@ function Home() {
 
             <Footer />
             </div>
+            </> : 
+                    <div className='LoadingScreen'>
+                    <div className="ring">
+                    <span className='spanRing'></span>
+                    </div>
+                  </div> : 
+                   <div className='LoadingScreen'>
+                   <div className="ring">
+                   <span className='spanRing'></span>
+                   </div>
+                 </div>
+            }
         {/* --> Fin background vert container */}
         </body>
       </html>

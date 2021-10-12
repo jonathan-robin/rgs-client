@@ -60,7 +60,6 @@ function SearchCross_results(props:{result:Match[] | null, profil:Profil, tour:n
             // sinon on retourne les infos d'idj1
             else{
               players.players.map((player, index) => {
-                console.log(player.player_nom)
                 if (player.player_id === res.IDJ1){
                   loose = {nom:player.player_nom, prenom:player.player_prenom, nat:player.player_nat, id:player.player_id};
                   score = res.score_sorted.idj2;
