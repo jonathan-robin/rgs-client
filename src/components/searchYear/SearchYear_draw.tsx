@@ -44,23 +44,34 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                         var idj1:any;
                         var idj2:any;
                         // On récupère les infos de j1 et j2 pour renvoyer vers le profil au handleClick
-                        if (match.match.VAINQ === match.match.IDJ1) { 
-                            idj2 = match.infos_looser; 
-                            idj1 = match.infos_vainq; 
+                        if (match.VAINQ === match.IDJ1) { 
+                            players.players.map((player, index) => {
+                                if(player.player_id === match.VAINQ){
+                                    idj1 = {nom: player.player_nom, prenom: player.player_prenom, nat:player.player_nat, id:player.player_id}
+                                }
+                                else if(player.player_id === match.IDJ2){
+                                    idj2 = {nom: player.player_nom, prenom: player.player_prenom, nat:player.player_nat, id:player.player_id}
+                                }
+                            })
                         }
                         else{
-                            idj1 = match.infos_vainq; 
-                            idj2 = match.infos_looser;
+                            players.players.map((player, index) => {
+                                if(player.player_id === match.VAINQ){
+                                    idj2 = {nom: player.player_nom, prenom: player.player_prenom, nat:player.player_nat, id:player.player_id}
+                                }
+                                else if(player.player_id === match.IDJ1){
+                                    idj1 = {nom: player.player_nom, prenom: player.player_prenom, nat:player.player_nat, id:player.player_id}
+                                }
+                            })
                         }
-                        // match.match.VAINQ === match.match.IDJ1 ? () => {idj2 = match.infos_looser; idj1 = match.infos_vainq} : () => {idj1 = match.infos_looser; idj2 = match.infos_vainq}
                         return (
                             <>
                             <div className='div200'>
                             <div className='row'>
                                 <span className="bubble bubble__search-year--result">
-                                <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+match.nat_idj1+'.png').default} />
+                                <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+idj1.nat+'.png').default} />
                                     <div className="resultat__match--name resultat__match--name--first-round" style={{cursor:'pointer'}}
-                                    onClick={() => {HandleClickProfile(history, idj1, players.players)}} >{match.fullName_idj1} 
+                                    onClick={() => {HandleClickProfile(history, idj1, players.players)}} >{idj1.nom} {idj1.prenom}
                                     </div>
                                     </div>
                                 </span>
@@ -69,9 +80,9 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                         <div className='div200'>
                         <div className='row'>
                           <span className="bubble bubble__search-year--result">
-                          <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+match.nat_idj2+'.png').default} />
+                          <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+idj2.nat+'.png').default} />
                             <div className="resultat__match--name resultat__match--name--first-round" style={{cursor:'pointer'}}
-                             onClick={() => {HandleClickProfile(history, idj2, players.players)}}>{match.fullName_idj2}
+                             onClick={() => {HandleClickProfile(history, idj2, players.players)}}>{idj2.nom} {idj2.prenom}
                             </div>
                             </div>
                           </span>
@@ -93,15 +104,25 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
 
                     {/* On mappe les tours 1, on affiche un item avec les infos du vainq  */}
                     {lesTours[0].map((match:Match, index:number) => {
+                        let idj1 = {nom:'', prenom:'', nat:'',id:0}; 
+                        let idj2 = {nom:'', prenom:'', nat:'',id:0};
+                        let vainq = {nom:'', prenom:'', nat:'',id:0};
+                        let score;
+                        players.players.map((player, index) => {
+                            if (player.player_id === match.IDJ1){idj1 = {nom: player.player_nom, prenom: player.player_prenom, nat:player.player_nat, id:player.player_id}}
+                            else if(player.player_id === match.IDJ2){ idj2 = {nom: player.player_prenom, prenom: player.player_nom, nat:player.player_nat, id:player.player_id}}
+                        })
+                        if (match.VAINQ === match.IDJ1){ vainq = idj1; score = match.score_sorted.idj1; }
+                        else{ vainq= idj2; score = match.score_sorted.idj2;}
                         return(
                     <div className='div200'>
                         <div className='row'>
                             <span className="bubble bubble__search-year--result">
-                            <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+match.infos_vainq.nat+'.png').default} />
+                            <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                 <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                onClick={() => HandleClickProfile(history, match.infos_vainq, players.players)}>{match.infos_vainq.nom} {match.infos_vainq.prenom}
+                                onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {vainq.prenom}
                                 </div></div>
-                                <div><div className="row resultat__match--score">{match.infos_vainq.score}</div></div>
+                                <div><div className="row resultat__match--score">{score}</div></div>
                             </span>
                         </div>
                     </div>
@@ -119,16 +140,26 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
 
                         {/* On mappe les tours 2 on affiche un item avec les infos du vainq */}
                         {lesTours[1].map((match:Match, index:number) => {
+                            let idj1 = {nom:'', prenom:'', nat:'',id:0}; 
+                            let idj2 = {nom:'', prenom:'', nat:'',id:0};
+                            let vainq = {nom:'', prenom:'', nat:'',id:0};
+                            let score;
+                            players.players.map((player, index) => {
+                                if (player.player_id === match.IDJ1){idj1 = {nom: player.player_nom, prenom: player.player_prenom, nat:player.player_nat, id:player.player_id}}
+                                else if(player.player_id === match.IDJ2){ idj2 = {nom: player.player_prenom, prenom: player.player_nom, nat:player.player_nat, id:player.player_id}}
+                            })
+                            if (match.VAINQ === match.IDJ1){ vainq = idj1; score = match.score_sorted.idj1; }
+                            else{ vainq= idj2; score = match.score_sorted.idj2;}
                         return(
                         <div className='div200'>
                             <div className='row'>
                                 <span className="bubble bubble__search-year--result">
-                            <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+match.infos_vainq.nat+'.png').default} />
+                            <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                     <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                    onClick={() => HandleClickProfile(history, match.infos_vainq, players.players)}>{match.infos_vainq.nom} {match.infos_vainq.prenom}
+                                    onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {vainq.prenom}
                                     </div>
                                     </div>
-                                    <div className="row resultat__match--score">{match.infos_vainq.score}</div>
+                                    <div className="row resultat__match--score">{score}</div>
                                 </span>
                             </div>
                         </div>
@@ -144,16 +175,26 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
 
                         {/* etc... */}
                         {lesTours[2].map((match:Match, index:number) => {
+                             let idj1 = {nom:'', prenom:'', nat:'',id:0}; 
+                             let idj2 = {nom:'', prenom:'', nat:'',id:0};
+                             let vainq = {nom:'', prenom:'', nat:'',id:0};
+                             let score;
+                             players.players.map((player, index) => {
+                                 if (player.player_id === match.IDJ1){idj1 = {nom: player.player_prenom, prenom: player.player_nom, nat:player.player_nat, id:player.player_id}}
+                                 else if(player.player_id === match.IDJ2){ idj2 = {nom: player.player_prenom, prenom: player.player_nom, nat:player.player_nat, id:player.player_id}}
+                             })
+                             if (match.VAINQ === match.IDJ1){ vainq = idj1; score = match.score_sorted.idj1; }
+                             else{ vainq= idj2; score = match.score_sorted.idj2;}
                             return(
                             <div className='div200'>
                                 <div className='row'>
                                     <span className="bubble bubble__search-year--result">
-                                    <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+match.infos_vainq.nat+'.png').default} />
+                                    <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                     <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                    onClick={() => HandleClickProfile(history, match.infos_vainq, players.players)}>{match.infos_vainq.nom} {match.infos_vainq.prenom}
+                                    onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {match.infos_vainq.prenom}
                                     </div>
                                     </div>
-                                    <div className="row resultat__match--score">{match.infos_vainq.score}</div>
+                                    <div className="row resultat__match--score">{score}</div>
                                     </span>
                                 </div>
                             </div>
@@ -168,16 +209,26 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                         </div>
 
                         {lesTours[3].map((match:Match, index:number) => {
+                             let idj1 = {nom:'', prenom:'', nat:'',id:0}; 
+                             let idj2 = {nom:'', prenom:'', nat:'',id:0};
+                             let vainq = {nom:'', prenom:'', nat:'',id:0};
+                             let score;
+                             players.players.map((player, index) => {
+                                 if (player.player_id === match.IDJ1){idj1 = {nom: player.player_prenom, prenom: player.player_nom, nat:player.player_nat, id:player.player_id}}
+                                 else if(player.player_id === match.IDJ2){ idj2 = {nom: player.player_prenom, prenom: player.player_nom, nat:player.player_nat, id:player.player_id}}
+                             })
+                             if (match.VAINQ === match.IDJ1){ vainq = idj1; score = match.score_sorted.idj1; }
+                             else{ vainq= idj2; score = match.score_sorted.idj2;}
                             return(
                             <div className='div200'>
                                 <div className='row'>
                                     <span className="bubble bubble__search-year--result">
-                                    <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+match.infos_vainq.nat+'.png').default} />
+                                    <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                     <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                    onClick={() => HandleClickProfile(history, match.infos_vainq, players.players)}>{match.infos_vainq.nom} {match.infos_vainq.prenom}
+                                    onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {vainq.prenom}
                                     </div>
                                     </div>
-                                    <div className="row resultat__match--score">{match.infos_vainq.score}</div>
+                                    <div className="row resultat__match--score">{score}</div>
                                     </span>
                                 </div>
                             </div>
@@ -192,16 +243,26 @@ function SearchYear_draw(props:{year:number, draw:__draw}):JSX.Element{
                         </div>
                         
                         {lesTours[4].map((match:Match, index:number) => {
+                              let idj1 = {nom:'', prenom:'', nat:'',id:0}; 
+                              let idj2 = {nom:'', prenom:'', nat:'',id:0};
+                              let vainq = {nom:'', prenom:'', nat:'',id:0};
+                              let score;
+                              players.players.map((player, index) => {
+                                  if (player.player_id === match.IDJ1){idj1 = {nom: player.player_prenom, prenom: player.player_nom, nat:player.player_nat, id:player.player_id}}
+                                  else if(player.player_id === match.IDJ2){ idj2 = {nom: player.player_prenom, prenom: player.player_nom, nat:player.player_nat, id:player.player_id}}
+                              })
+                              if (match.VAINQ === match.IDJ1){ vainq = idj1; score = match.score_sorted.idj1; }
+                              else{ vainq= idj2; score = match.score_sorted.idj2;}
                             return(
                             <div className='div200'>
                                 <div className='row'>
                                     <span className="bubble bubble__search-year--result">
-                                    <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+match.infos_vainq.nat+'.png').default} />
+                                    <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+vainq.nat+'.png').default} />
                                     <div className="resultat__match--name" style={{cursor:'pointer'}}
-                                    onClick={() => HandleClickProfile(history, match.infos_vainq, players.players)}>{match.infos_vainq.nom} {match.infos_vainq.prenom}
+                                    onClick={() => HandleClickProfile(history, vainq, players.players)}>{vainq.nom} {vainq.prenom}
                                     </div>
                                     </div>
-                                    <div className="row resultat__match--score">{match.infos_vainq.score}</div>
+                                    <div className="row resultat__match--score">{score}</div>
                                     </span>
                                 </div>
                             </div>

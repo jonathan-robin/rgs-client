@@ -11,7 +11,7 @@ import Player from "../../classes/player";
 * @param { draw } draw : le tableau des tours 1 à 7
 * @return {JSX.Element} 
 */
-export default function searchYear(props:{year:number, draw:__draw, players:Player[]}):JSX.Element {
+export default function searchYear(props:{year:number, draw:__draw}):JSX.Element {
   return (
     <html>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>

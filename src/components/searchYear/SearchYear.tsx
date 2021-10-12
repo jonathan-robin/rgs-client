@@ -28,14 +28,14 @@ function SearchYear(props: RouteComponentProps<{}, any, year | any>):JSX.Element
                     'Content-Type':'application/json',
                     'Accept':'application/json'
                 },
-                body:JSON.stringify({'year':[props.location.state.year], 'players':players.players}),
+                body:JSON.stringify({'year':[props.location.state.year]}),
         })
         .then(response => response.json())
         .then(response => {return setDraw(response)})
     },[])
 
     // Quand setDraw != null on affiche searchYear
-    return (draw != undefined && <><SearchYear_Layout year={props.location.state.year} draw={draw} players={props.location.state.players}/></>||<div></div>)
+    return (draw != undefined && <><SearchYear_Layout year={props.location.state.year} draw={draw}/></>||<div></div>)
 }
 
 export default SearchYear

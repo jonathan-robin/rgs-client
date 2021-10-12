@@ -63,6 +63,9 @@ class Match{
     infos_looser:__infosMatch;
     annee:number;
     tourString:string;
+    VAINQ:number;
+    IDJ1:number;
+    IDJ2:number;
     constructor(match:__match){
         this.score = [match.set1w, match.set1l, match.set2w, match.set2l, match.set3w,match.set3l, match.set4w,match.set4l, match.set5w,match.set5l]
         this.match = match;
@@ -74,7 +77,10 @@ class Match{
         this.nat_idj1 = match.nat_IDJ1
         this.nat_idj2 = match.nat_IDJ2
         this.annee = this.get_annee(match.IDEDITION);
-        this.tourString = this.get_tour(match.Tour)
+        this.tourString = this.get_tour(match.Tour); 
+        this.VAINQ = match.VAINQ;
+        this.IDJ1 = match.IDJ1;
+        this.IDJ2 = match.IDJ2
     }
 
      /**

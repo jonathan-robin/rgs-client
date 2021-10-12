@@ -43,32 +43,60 @@ function SearchYear_finale(props:{year:number, draw:__draw}) {
         <div className="row resultat resultat__finale">
             <div className="col resultat__match">
               <div className="row resultat__match--up">
-                <span className="bubble bubble__search-year--result">
-                <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+infoDemi_a?.infos_vainq.nat+'.png').default} />
-                  <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, infoDemi_a?.infos_vainq, players.players)} style={{cursor:'pointer'}}>{infoDemi_a?.infos_vainq.nom} {infoDemi_a?.infos_vainq.prenom} </div>
-                  </div>
-                  <div className="row resultat__match--score">{infoDemi_a?.infos_vainq.score}</div>
-                </span>
+
+                  {players.players.map((player, index) => { 
+                    if (infoDemi_a.VAINQ === player.player_id ){
+                      return (
+                        <span className="bubble bubble__search-year--result">
+                          <div style={{display:'flex'}}>
+                            <img className="draw__flag" src={require('../../resources/flags/'+player.player_nat+'.png').default} />
+                            <div className="resultat__match--name" onClick={() => HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat}, players.players)} style={{cursor:'pointer'}}>
+                              {player.player_nom} {player.player_prenom}
+                            </div>
+                          </div>
+                          <div className="row resultat__match--score">{player.player_id === infoDemi_a.IDJ1 ? infoDemi_a?.score_sorted.idj1 : infoDemi_a?.score_sorted.idj2}</div>
+                        </span>
+                      )
+                    }
+                  })}
               </div>
         {/* <-- Fin Résultat finale*/}
         {/* --> Début Résultat Demi-finale*/}
               <div className="row resultat__match--down">
-                <span className="bubble bubble__search-year--result">
-                <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+infoDemi_b?.infos_vainq.nat+'.png').default} />
-                  <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, infoDemi_b?.infos_vainq, players.players)} style={{cursor:'pointer'}}>{infoDemi_b?.infos_vainq.nom} {infoDemi_b?.infos_vainq.prenom} </div>
-                  </div>
-                  <div className="row resultat__match--score">{infoDemi_b?.infos_vainq.score}</div>
-                </span>
+              {players.players.map((player, index) => { 
+                if (infoDemi_b.VAINQ === player.player_id ){
+                  return (
+                    <span className="bubble bubble__search-year--result">
+                      <div style={{display:'flex'}}>
+                        <img className="draw__flag" src={require('../../resources/flags/'+player.player_nat+'.png').default} />
+                        <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat}, players.players)} style={{cursor:'pointer'}}>
+                          {player.player_nom} {player.player_prenom} 
+                        </div>
+                      </div>
+                      <div className="row resultat__match--score">{player.player_id === infoDemi_b.IDJ1 ? infoDemi_b?.score_sorted.idj1 : infoDemi_b?.score_sorted.idj2}</div>
+                    </span>
+                  )
+                }
+              })}
               </div>
+
             </div>
             <div className="col resultat__match">
               <div className="row resultat__match--middle">
-                <span className="bubble bubble__search-year--result">
-                <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+finale.infos_vainq.nat+'.png').default} />
-                  <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, finale.infos_vainq, players.players)} style={{cursor:'pointer'}}>{finale.infos_vainq.nom} {finale.infos_vainq.prenom}</div>
-                  </div>
-                  <div className="row resultat__match--score">{finale.infos_vainq.score}</div>
-                </span>
+              {players.players.map((player, index) => { 
+                if (finale.VAINQ === player.player_id ){
+                  return (
+                    <span className="bubble bubble__search-year--result">
+                      <div style={{display:'flex'}}><img className="draw__flag" src={require('../../resources/flags/'+player.player_nat+'.png').default} />
+                        <div className="resultat__match--name" onClick={()=>HandleClickProfile(history, {nom:player.player_nom, prenom:player.player_prenom, id:player.player_id, nat:player.player_nat}, players.players)} style={{cursor:'pointer'}}>
+                          {player.player_nom} {player.player_prenom}
+                        </div>
+                      </div>
+                      <div className="row resultat__match--score">{player.player_id === finale.IDJ1 ? finale?.score_sorted.idj1 : finale?.score_sorted.idj2}</div>
+                    </span>
+                  )
+                }
+              })}
               </div>
             </div>
         </div>
