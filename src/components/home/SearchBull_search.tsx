@@ -45,7 +45,6 @@ export default function SearchBull_search(){
             prenom: player.player_prenom,
             id: player.player_id,
             nat: player.player_nat,
-            players:players.players
           }),
         })
           .then((res) => res.json())

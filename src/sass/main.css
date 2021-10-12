@@ -1056,6 +1056,12 @@ a {
   }
 }
 
+.matchs_flag--searchCross {
+  width: 4vw !important;
+  padding: 6px;
+  min-width: 60px;
+}
+
 .card {
   margin-top: -100px;
   border-radius: 10px !important;

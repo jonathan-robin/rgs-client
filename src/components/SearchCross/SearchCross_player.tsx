@@ -49,7 +49,6 @@ function SearchCross_player(props:{resetInputValue:any, handleSetProfil:any}) {
         prenom: player.player_prenom,
         id: player.player_id,
         nat: player.player_nat,
-        players:players.players
       }),
     })
       .then((res) => res.json())

@@ -63,7 +63,7 @@ import { usePlayersContext } from "../../contex/PlayersContext";
               'Accept':'application/json'
           },
           body: JSON.stringify({tour:tour, 
-              year, id_joueur: profil?.id_joueur, players:players.players}),
+              year, id_joueur: profil?.id_joueur}),
       })
       .then(res => res.json())
       .then((res) => {return setResult(res.map((match:__match,index:number) => {
@@ -83,7 +83,8 @@ import { usePlayersContext } from "../../contex/PlayersContext";
                 'Accept':'application/json'
             },
             body: JSON.stringify({tour, 
-                year:year, id_joueur: profil?.id_joueur, players:players.players}),
+                year:year, id_joueur: profil?.id_joueur, 
+              }),
         })
         .then(res => res.json())
         .then((res) => {return setResult(res.map((match:__match,index:number) => {
