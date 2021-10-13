@@ -67,7 +67,7 @@ export default function SearchBull_search(){
       {!isLoading ? 
         <div className="container">
         <div className="row">
-          <div className="content-box content-box--bull col-12">
+          <div className="content-box content-box--bull">
             <div className="content-box__text">
               <div className="sub-title sub-title--bull">Recherche Bonus</div>
               <div className="sub-title--lighter sub-title--lighter--bull">Qui est sa bête noire ?</div>
@@ -76,7 +76,7 @@ export default function SearchBull_search(){
                 ainsi que le détail de chacune de ces rencontres.
               </div>
             </div>
-            <div className="content-box__search content-box__search--bull col-8">
+            <div className="content-box__search content-box__search--bull">
               <input
           className="input form-control input--profil"
           id="proposition_player--SearchBull"

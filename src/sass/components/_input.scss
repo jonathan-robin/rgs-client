@@ -3,12 +3,13 @@
     font:$inputText-font !important;
     width:fit-content !important;
 }
-.input-group{ 
-    // @include media('<=desktop', '>laptop'){
-    //     margin-top:-70vh !important;
-    //     margin-left:30vw;
-    //     align-content:center;
-    // } 
+.input-group--SearchCross{ 
+    display:block !important;
+    margin:auto;
+    @include media('<tablet'){
+        width:60%;
+        margin-top:50px;
+    }
 }
 .button__search--cross-search{ 
     @include media('>tablet'){ 

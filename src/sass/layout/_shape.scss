@@ -19,6 +19,16 @@
         margin-top:calc(50vw * 0.1);
     }
 }
+.wave-bottom--green{
+    @include media('>laptop'){
+        position:relative !important;
+    }
+}
+.green{ 
+    @include media('>laptop'){
+        margin-top:-20vw;
+    }
+}
 .background__search-year{
     background:transparent linear-gradient(230deg, #F3C137 0%,  #f37737 100%) 0% 0% no-repeat padding-box;
     padding-bottom:calc(30vw + 40px) !important;

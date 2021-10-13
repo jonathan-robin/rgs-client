@@ -4,153 +4,109 @@
         padding:2vw 8vw 1vw 8vw;
     }
 }
+
 .content-box{
-    padding-top:4vh;
-    z-index:1; 
-    @include media('<=tablet'){
-        padding:8vh 10vw !important;
-    }
-    @include media('<=desktop', '>tablet'){
-        padding:8vh 15vw !important;
-    }
-}
-.content-box, .content-box--profil{
     text-align:center;
-}
-.content-box--joueur{
-    @include media('<=tablet'){ 
-        margin-top:100px !important;
+    &.content-box--year, &.content-box--profil, &.content-box--bull{
+        display:block !important; 
+        margin-inline:auto;
+        width:80% !important;
+        margin-block:5vw !important;
+        max-width:1000px !important;
+        @include media('>laptop'){
+            display:flex !important; 
+        }
+        .content-box__text{
+            width:80%;
+            margin-inline:auto;
+            @include media('>laptop'){
+                width:60% !important;
+                margin-right:0;
+            }
+        }
     }
 }
+.content-box--profil{
+    .content-box__text{
+        order:2 !important;
+    }
+} 
 .content-box--cross-search{ 
-    text-align:center !important;
-    @include media('<=desktop', '>laptop'){
-        width:40% !important;
-        margin-left:0 !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    width:60%;
+    max-width:600px;
+    align-content: flex-start;
+    @include media('<tablet'){
+        width:80%;
+        margin-inline:auto !important;
     }
+}
+// Outer content-box--cross-search
+.outer-cross{ 
+    margin-inline: 8vw;
+    display:flex;
+    @include media('>laptop'){
+        margin-inline:auto !important;
+    }
+    @include media('<tablet'){
+    display:block;
+    }
+    margin-top: 5vw;
+    max-width:1200px;
+    width:90%;
 }
 .content-box--bull{ 
     padding-top:20vw !important;
+    padding-bottom:240px;
     @include media('<=tablet'){
-        padding-top:20vw !important;
         margin-left:2vh;
     }
 }
+
 .content-box__search{
     padding:1vh 1vw;
     display:flex;
-    padding-left: 10vw !important;
-    padding-right: 10vw !important;
-}
-.content-box__search.content-box__search--profil,
-.content-box__search.content-box__search--joueur, 
-.content-box__search.content-box__search--bull, 
-.content-box__search.content-box__search--slider{
-    justify-content: center;
-    padding-top:2vh;
-    width:100%;
-    @include media('<=tablet'){ 
-        width:100%;
+    &.content-box__search--year, &.content-box__search--profil, &.content-box__search--bull{
+        width:fit-content;
+        margin-inline:auto;
+        margin-top:2vw;
+        @include media('>laptop'){
+            align-content:center;
+            margin-block:auto!important;
+        }
     }
 }
-.content-box--search-year--top{
-    padding-top:15vh;
-}
-.content-box, .content-box__search--year{
-    margin-left:auto;
-}
 .content-box__search.content-box__search--year{
-    justify-content: center;
-    padding-top:2vh;
-}
-.content-box__search.content-box__search--year{
-    @include media('<=desktop', '>laptop'){
-        width:30vw !important;
-        padding-bottom:10vw;
-        margin-top:-12vh;
-    }
-}
-.content-box__search.content-box__search--slider{
-    @include media('<=desktop', '>laptop'){
-        padding-bottom:10vw;
-        margin-left:30vw;
+    margin-bottom:6vw;
+    @include media('>laptop'){
+        padding-left:-2vw;
+        padding-top:40px;
     }
 }
 .content-box__search.content-box__search--profil{
-    @include media('<=desktop', '>laptop'){
-        width:30vw !important;
-        padding-bottom:10vw;
-        margin-top:-10vh;
-    }
-}
-.content-box__search.content-box__search--joueur{
-    @include media('<=desktop', '>laptop'){
-        width:30vw !important;
-        padding-bottom:10vw;
-        margin-top:-10vh;
-        margin-left:auto;
-    }
+    order:1 !important;
 }
 .content-box__search--cross-search{
     justify-content: space-around;
-    padding-left:20vw !important; 
     align-items:center !important;
-    // min-width:70% !important;
-}
-
-.content__text{
-    padding:0vw 5vw;
-    @include media('<=desktop', '>tablet'){
-        padding:0vh 10vw;
-    }
-}
-.content-box--year .content-box__text{
-    @include media('<=desktop', '>laptop'){
-        width:40vw !important;
-    }
-}
-.content-box--profil .content-box__text{
-    @include media('<=desktop', '>laptop'){
-        width:40vw !important;
-        margin-left:auto;
-    }
-}
-.content-box--joueur .content-box__text{
-    @include media('<=desktop', '>laptop'){
-        width:40vw !important;
-        margin-right:auto;
-        margin-top:-60vh;
-    }
-}
-.content-box--cross-search .content-box__text{
-    @include media('<=desktop', '>laptop'){
-        width:40vw !important;
-        margin-right:auto !important;
-    }
-}
-.content-box--bull .content-box__text{
-    @include media('<=desktop', '>laptop'){
-        // width:40vw !important;
-        // margin-right:auto !important;
-        max-width:900px !important;
-    }
 }
 .content-box__search.content-box__search--bull{
-    padding-bottom:350px;
-    @include media('<=desktop', '>laptop'){
-        // width:30vw !important;
-        // margin-top:-12vh;
-        // margin-left:44vw;
-    }
-
-}
-.content-box.content-box--bull{
     @include media('>laptop'){
-        display:flex !important; 
-        flex-direction:column !important; 
-        flex-wrap: nowrap !important;
+        padding-right:2vw;
+        padding-top:70px;
     }
 }
+.content-box__search.content-box__search--slider{
+    justify-content: center;
+}
+
+
+
+
+
+
 .proposition_player, .proposition_player--searchCross, .proposition_player--searchBull{ 
     max-height:350px;
     max-width:180px;
@@ -178,12 +134,6 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
-  .proposition_player--searchBull{
-    //   margin-top:-350px !important; 
-    //   margin-left: -150px !important;
-    // top:2170px;
-    // margin-left:-150px !important;
-}
 .propal_joueur{ 
     position:relative;
     display:flex;
@@ -204,28 +154,15 @@
         cursor:pointer;
     }
 }
-.wave-bottom--green{
-     @include media('>laptop'){
-        //  margin-top:28vw;
-         position:relative !important;
-     }
-}
-.outer-cross{ 
-    @include media('>laptop'){ 
-        display:flex;
-        margin-top:10vw;
-    }
-}
-.green{ 
-    @include media('>laptop'){
-        margin-top:-20vw;
-        // position:relative !important;
-    }
-}
+
+
+
+
 .draw__flag.propal{ 
     max-height:25px;
     margin-right:3px;
 }
+
 a{
     height:fit-content;
 }

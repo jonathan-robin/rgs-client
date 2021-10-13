@@ -423,6 +423,18 @@
   width: fit-content !important;
 }
 
+.input-group--SearchCross {
+  display: block !important;
+  margin: auto;
+}
+
+@media (max-width: 767px) {
+  .input-group--SearchCross {
+    width: 60%;
+    margin-top: 50px;
+  }
+}
+
 @media (min-width: 769px) {
   .button__search--cross-search {
     height: -webkit-fit-content !important;
@@ -472,50 +484,95 @@
 }
 
 .content-box {
-  padding-top: 4vh;
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .content-box {
-    padding: 8vh 10vw !important;
-  }
-}
-
-@media (max-width: 2024px) and (min-width: 769px) {
-  .content-box {
-    padding: 8vh 15vw !important;
-  }
-}
-
-.content-box, .content-box--profil {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .content-box--joueur {
-    margin-top: 100px !important;
+.content-box.content-box--year, .content-box.content-box--profil, .content-box.content-box--bull {
+  display: block !important;
+  margin-inline: auto;
+  width: 80% !important;
+  margin-block: 5vw !important;
+  max-width: 1000px !important;
+}
+
+@media (min-width: 1025px) {
+  .content-box.content-box--year, .content-box.content-box--profil, .content-box.content-box--bull {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
 }
 
-.content-box--cross-search {
-  text-align: center !important;
+.content-box.content-box--year .content-box__text, .content-box.content-box--profil .content-box__text, .content-box.content-box--bull .content-box__text {
+  width: 80%;
+  margin-inline: auto;
 }
 
-@media (max-width: 2024px) and (min-width: 1025px) {
+@media (min-width: 1025px) {
+  .content-box.content-box--year .content-box__text, .content-box.content-box--profil .content-box__text, .content-box.content-box--bull .content-box__text {
+    width: 60% !important;
+    margin-right: 0;
+  }
+}
+
+.content-box--profil .content-box__text {
+  -webkit-box-ordinal-group: 3 !important;
+      -ms-flex-order: 2 !important;
+          order: 2 !important;
+}
+
+.content-box--cross-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 60%;
+  max-width: 600px;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+@media (max-width: 767px) {
   .content-box--cross-search {
-    width: 40% !important;
-    margin-left: 0 !important;
+    width: 80%;
+    margin-inline: auto !important;
+  }
+}
+
+.outer-cross {
+  margin-inline: 8vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5vw;
+  max-width: 1200px;
+  width: 90%;
+}
+
+@media (min-width: 1025px) {
+  .outer-cross {
+    margin-inline: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .outer-cross {
+    display: block;
   }
 }
 
 .content-box--bull {
   padding-top: 20vw !important;
+  padding-bottom: 240px;
 }
 
 @media (max-width: 768px) {
   .content-box--bull {
-    padding-top: 20vw !important;
     margin-left: 2vh;
   }
 }
@@ -525,146 +582,60 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 10vw !important;
-  padding-right: 10vw !important;
 }
 
-.content-box__search.content-box__search--profil,
-.content-box__search.content-box__search--joueur,
-.content-box__search.content-box__search--bull,
-.content-box__search.content-box__search--slider {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 2vh;
-  width: 100%;
+.content-box__search.content-box__search--year, .content-box__search.content-box__search--profil, .content-box__search.content-box__search--bull {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: 2vw;
 }
 
-@media (max-width: 768px) {
-  .content-box__search.content-box__search--profil,
-  .content-box__search.content-box__search--joueur,
-  .content-box__search.content-box__search--bull,
-  .content-box__search.content-box__search--slider {
-    width: 100%;
+@media (min-width: 1025px) {
+  .content-box__search.content-box__search--year, .content-box__search.content-box__search--profil, .content-box__search.content-box__search--bull {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin-block: auto !important;
   }
-}
-
-.content-box--search-year--top {
-  padding-top: 15vh;
-}
-
-.content-box, .content-box__search--year {
-  margin-left: auto;
 }
 
 .content-box__search.content-box__search--year {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 2vh;
+  margin-bottom: 6vw;
 }
 
-@media (max-width: 2024px) and (min-width: 1025px) {
+@media (min-width: 1025px) {
   .content-box__search.content-box__search--year {
-    width: 30vw !important;
-    padding-bottom: 10vw;
-    margin-top: -12vh;
+    padding-left: -2vw;
+    padding-top: 40px;
   }
 }
 
-@media (max-width: 2024px) and (min-width: 1025px) {
-  .content-box__search.content-box__search--slider {
-    padding-bottom: 10vw;
-    margin-left: 30vw;
-  }
-}
-
-@media (max-width: 2024px) and (min-width: 1025px) {
-  .content-box__search.content-box__search--profil {
-    width: 30vw !important;
-    padding-bottom: 10vw;
-    margin-top: -10vh;
-  }
-}
-
-@media (max-width: 2024px) and (min-width: 1025px) {
-  .content-box__search.content-box__search--joueur {
-    width: 30vw !important;
-    padding-bottom: 10vw;
-    margin-top: -10vh;
-    margin-left: auto;
-  }
+.content-box__search.content-box__search--profil {
+  -webkit-box-ordinal-group: 2 !important;
+      -ms-flex-order: 1 !important;
+          order: 1 !important;
 }
 
 .content-box__search--cross-search {
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding-left: 20vw !important;
   -webkit-box-align: center !important;
       -ms-flex-align: center !important;
           align-items: center !important;
 }
 
-.content__text {
-  padding: 0vw 5vw;
-}
-
-@media (max-width: 2024px) and (min-width: 769px) {
-  .content__text {
-    padding: 0vh 10vw;
-  }
-}
-
-@media (max-width: 2024px) and (min-width: 1025px) {
-  .content-box--year .content-box__text {
-    width: 40vw !important;
-  }
-}
-
-@media (max-width: 2024px) and (min-width: 1025px) {
-  .content-box--profil .content-box__text {
-    width: 40vw !important;
-    margin-left: auto;
-  }
-}
-
-@media (max-width: 2024px) and (min-width: 1025px) {
-  .content-box--joueur .content-box__text {
-    width: 40vw !important;
-    margin-right: auto;
-    margin-top: -60vh;
-  }
-}
-
-@media (max-width: 2024px) and (min-width: 1025px) {
-  .content-box--cross-search .content-box__text {
-    width: 40vw !important;
-    margin-right: auto !important;
-  }
-}
-
-@media (max-width: 2024px) and (min-width: 1025px) {
-  .content-box--bull .content-box__text {
-    max-width: 900px !important;
-  }
-}
-
-.content-box__search.content-box__search--bull {
-  padding-bottom: 350px;
-}
-
 @media (min-width: 1025px) {
-  .content-box.content-box--bull {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
-    -ms-flex-wrap: nowrap !important;
-        flex-wrap: nowrap !important;
+  .content-box__search.content-box__search--bull {
+    padding-right: 2vw;
+    padding-top: 70px;
   }
+}
+
+.content-box__search.content-box__search--slider {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .proposition_player, .proposition_player--searchCross, .proposition_player--searchBull {
@@ -727,27 +698,6 @@
 .propal_joueur:hover, .propal_joueur:focus {
   background-color: #E59215;
   cursor: pointer;
-}
-
-@media (min-width: 1025px) {
-  .wave-bottom--green {
-    position: relative !important;
-  }
-}
-
-@media (min-width: 1025px) {
-  .outer-cross {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 10vw;
-  }
-}
-
-@media (min-width: 1025px) {
-  .green {
-    margin-top: -20vw;
-  }
 }
 
 .draw__flag.propal {
@@ -1355,6 +1305,18 @@ a {
 @media (max-width: 768px) {
   .background__search-profile {
     margin-top: calc(50vw * 0.1);
+  }
+}
+
+@media (min-width: 1025px) {
+  .wave-bottom--green {
+    position: relative !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .green {
+    margin-top: -20vw;
   }
 }
 

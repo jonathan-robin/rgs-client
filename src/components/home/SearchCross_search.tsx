@@ -106,7 +106,7 @@ import { usePlayersContext } from "../../contex/PlayersContext";
     {!isLoading ? 
     <>
     <div className='outer-cross'>
-      <div className="content-box content-box--cross-search col-12">
+      <div className="content-box content-box--cross-search">
         <div className="content-box__text">
           <div className="sub-title sub-title--cross-search">
             Recherche croisee
@@ -137,12 +137,12 @@ import { usePlayersContext } from "../../contex/PlayersContext";
         </div>
       </div>
 
-      <div className='input-group'> 
-        <div className="content-box__search content-box__search--cross-search col">
+      <div className='input-group--SearchCross'> 
+        <div className="content-box__search content-box__search--cross-search">
             <SearchCross_player isLoading={setIsLoading} resetInputValue={reset} handleSetProfil={handleSetProfil}/>
             <SearchCross_year disabled={disabled} resetInputValue={reset} handleSetYear={handleSetYear} />
             </div>
-        <div className="content-box__search content-box__search--cross-search col">
+        <div className="content-box__search content-box__search--cross-search">
             <SearchCross_tour disabled={disabled} resetInputValue={reset} handleSetTour={handleSetTour} />
             <button type="button" className="button button__search--cross-search" onClick={handleClickReset}>Réinitialiser les filtres</button>
         </div>

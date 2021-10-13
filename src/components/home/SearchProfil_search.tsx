@@ -65,7 +65,7 @@ function SearchProfil_search(props:{isLoading:any}) {
 
   return (
     <div className="row">
-      <div className="content-box content-box--profil col-12">
+      <div className="content-box content-box--profil">
         <div className="content-box__text">
           <div className="sub-title sub-title--profil">
             Recherche par joueur
@@ -78,7 +78,7 @@ function SearchProfil_search(props:{isLoading:any}) {
             matchs gagnés, ratio de victoire, nationalité, meilleur résultat...
           </div>
         </div>
-        <div className="content-box__search content-box__search--profil col">
+        <div className="content-box__search content-box__search--profil">
           <div style={{ display: "inline" }}>
             <input
               id="proposition_player--SearchProfile"

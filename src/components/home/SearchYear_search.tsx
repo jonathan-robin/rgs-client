@@ -39,7 +39,7 @@ function SearchYear_search() {
     return (
             <div className="row">
             {/* --> Début Recherche par Année */}
-            <div className="content-box content-box--year col-12">
+            <div className="content-box content-box--year">
                 <div className="content-box__text">
                 <div className="sub-title sub-title--year">
                     Recherche par annee
@@ -49,7 +49,7 @@ function SearchYear_search() {
                     Tapez dans la barre de recherche qui suit "1999" et vous avez accès au tableau homme de 1999, les 127 matchs qui s'y sont déroulés avec les résultats de chaque match.
                 </div>
                 </div>
-                <div className="content-box__search content-box__search--year col">
+                <div className="content-box__search content-box__search--year">
                 <input className="input form-control input--year" type="text" placeholder="Entre 1968 et 2021..." onChange={handleChangeInput}/>
                     {/* <span className='tooltiptext'>Veuillez rentrer une année entre 1968 et 2021.</span> */}
                     <span id='selectInfosSpanSearchYear' className="selectInfos" data-descr="Veuillez d'abord rentrer une année valide !">
