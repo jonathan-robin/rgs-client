@@ -9,7 +9,7 @@
     justify-content: center;
     display:flex;
     margin:auto;
-    width:80vw !important;
+    width:90vw !important;
     max-width:900px;
     justify-content: space-evenly !important;
 }
@@ -23,8 +23,8 @@
     cursor:pointer;
 }
 .grid__search-player{ 
-    display:grid;
-    grid-template-columns: repeat(8,1fr);
+    // display:grid;
+    // grid-template-columns: repeat(8,1fr);
     // width:100% !important;
 }
 

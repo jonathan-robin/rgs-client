@@ -1,5 +1,6 @@
+
 .smallerText{
-    font:$smallerText-font;
+    font:10px "Calibri";
     color:white;
 }
 .footer__item, .smallText{
@@ -8,56 +9,78 @@
     }
 }
 .smallText{
-    font:$smallText-font;
+    font:10px "haarlem";
     color:$green--dark;
     cursor:pointer;
     @include media('<=tablet'){
-        font:12px Haarlem Deco DEMO;
+        font:12px "Haarlem";
     }
     @include media('<=desktop', '>tablet'){
-        font:14px Haarlem Deco DEMO;
+        font:14px "Haarlem";
         line-height:1.2;
     }
 
 }
 .inputText-font{ 
-    font:$inputText-font;
+    font:14px Calibri;
 }
+
 .text-regular{
-    font:$text-font--mobile; 
+    font-size:clamp(1.2rem, 1.7vw, 1.7rem);
+    font-family:Calibri; 
     color:$green--regular;  
     line-height: 0.9; 
     @include media('<=tablet'){ 
-        line-height: $text-font--line-height;
+        line-height: 0.8;
     }
+}
+.content-box__search{
+    font:13px "Haarlem Deco DEMO";
+}
+button{
+    font:16px "Haarlem Deco DEMO" !important;
 }
 .content-box__search--cross-search button{
     @include media('<=draw-6'){
-        font:13px Haarlem Deco DEMO;
+        font:13px "Haarlem";
     }
 }
 .text-regular--bull{ 
     color:$orange--dark;
 }
 .sub-title--lighter{
-    font:$subTitle-lighter-font--mobile;
+    font:$subTitle-font--mobile !important;
     color:$green--regular;
 }
+.sub-title--lighter{
+    font-size:clamp(1.75rem, 3vw, 2.1rem) ;
+    font-family: "Haarlem";
+    @include media('<=tablet'){
+        font-size:clamp(1.25rem, 3vw, 2.1rem); 
+        font-family: "Haarlem";
+    }
+    @include media('<=desktop', '>tablet'){
+        font-size:clamp(1.75rem, 3vw, 2.1rem) ;
+        font-family: "Haarlem";
+    }
+}
 .sub-title--lighter--bull{
-    font:$subTitle-lighter-font--mobile;
     color:$orange--dark;
 }
 .sub-title--bull{
     color:$orange--darker !important;
 }
 .sub-title{
-    font:$subTitle-font--mobile; 
+    font-size:clamp(1.75rem, 3vw, 2.5rem); 
+    font-family: "Haarlem";
     color:$green--dark;
     @include media('<=tablet'){
-        font:$subTitle-font--mobile;
+        font-size:clamp(1.75rem, 3vw, 2.5rem); 
+        font-family: "Haarlem";
     }
     @include media('<=desktop', '>tablet'){
-        font:$subTitle-font--mobile; 
+        font-size:clamp(1.75rem, 3vw, 2.5rem); 
+        font-family: "Haarlem";
     }
 }
 .title{ 

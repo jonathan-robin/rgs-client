@@ -30,7 +30,8 @@
 }
 .card__profile__info--prenom{ 
     padding:0.5rem 3.5rem;
-    display:grid !important;
+    display:flex !important;
+    align-items:center;
     grid-column-start: 1 !important;
     grid-column-end:3 !important;
     grid-row: 2 !important;
@@ -103,15 +104,33 @@
 .card__profile__result{ 
     display:inline;
     color:$orange--dark;
-    font:$text-font--mobile;
+    font-size:clamp(1.2rem, 1.6vw, 1.6rem) !important; 
+    font-family: Calibri;
+    // font:$text-font--mobile;
     font-weight:800;
+    text-shadow: 1px 1px 1px $green--dark;
+
 }
 .card__profile__label{ 
-    font:$subTitle-font--bubble;
+    font-size:clamp(.8rem, 1.6vw, 1.6rem); 
+    font-family:Calibri;
+    text-shadow: 1px 1px 2px black;
     color:#fff;
     font-weight:600;
+    // @include media('<bigPhone'){
+    //     font-size:11px;
+    // }
 }
 .card__profile__label--info{
-    font:$title-font--bubble;
+    font-family: "Vintage";
+    font-size:clamp(1.25rem, 3vw, 2.1rem); 
     color:$orange--darker;
+    text-shadow: 1px 1px 1px $green--darker;;
+    // text-shadow: 1px 1px 1px $green--dark;
 }
+.flagProfile{ 
+    width:25%;
+    min-width:20px; 
+    margin-right:20px;
+}
+

@@ -29,10 +29,10 @@ function SearchProfile_matchs(props:{matchList:__match[], joueur:Profil}):any {
             <div className="content__player content__player--match-list">
                 <div className="button button__player button__player--match-list">LISTE DES MATCHS</div>
             </div>
-            <div className="content__player content__player--sum">
+            {/* <div className="content__player content__player--sum">
                 <div className="button button__player button__player--sum">{props.joueur.nom_joueur} {props.joueur.prenom_joueur}</div>
                 <div className="button button__player button__player--sum">{props.joueur.matchs.length} matchs ({props.joueur.nb_win}V / {props.joueur.nb_loose}D)</div>
-            </div>
+            </div> */}
             <div className="content__player grid__search-player content__player--info">
                 <div className="button button__player button__player--info">Adversaire</div>
                 <div className="button button__player button__player--info">Editions</div>

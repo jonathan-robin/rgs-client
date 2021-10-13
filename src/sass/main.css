@@ -1,5 +1,20 @@
+@font-face {
+  font-family: "Vintage";
+  src: url("./fonts/Vintage.ttf");
+}
+
+@font-face {
+  font-family: "Haarlem";
+  src: url("./fonts/Haarlem.ttf");
+}
+
+@font-face {
+  font-family: "Calibri";
+  src: url("./fonts/Carlito-Regular.ttf");
+}
+
 .smallerText {
-  font: 10px calibri;
+  font: 10px "Calibri";
   color: white;
 }
 
@@ -8,20 +23,20 @@
 }
 
 .smallText {
-  font: 10px Haarlem Deco DEMO;
+  font: 10px "haarlem";
   color: #1A6106;
   cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .smallText {
-    font: 12px Haarlem Deco DEMO;
+    font: 12px "Haarlem";
   }
 }
 
 @media (max-width: 2024px) and (min-width: 769px) {
   .smallText {
-    font: 14px Haarlem Deco DEMO;
+    font: 14px "Haarlem";
     line-height: 1.2;
   }
 }
@@ -31,7 +46,8 @@
 }
 
 .text-regular {
-  font: calc(10px + 0.9vw) Calibri;
+  font-size: clamp(1.2rem, 1.7vw, 1.7rem);
+  font-family: Calibri;
   color: #208E00;
   line-height: 0.9;
 }
@@ -42,9 +58,17 @@
   }
 }
 
+.content-box__search {
+  font: 13px "Haarlem Deco DEMO";
+}
+
+button {
+  font: 16px "Haarlem Deco DEMO" !important;
+}
+
 @media (max-width: 820px) {
   .content-box__search--cross-search button {
-    font: 13px Haarlem Deco DEMO;
+    font: 13px "Haarlem";
   }
 }
 
@@ -53,12 +77,30 @@
 }
 
 .sub-title--lighter {
-  font: calc(10px + 1.4vw) Haarlem Deco DEMO;
+  font: clamp(1.75rem, 3vw, 2.1rem) "Haarlem" !important;
   color: #208E00;
 }
 
+.sub-title--lighter {
+  font-size: clamp(1.75rem, 3vw, 2.1rem);
+  font-family: "Haarlem";
+}
+
+@media (max-width: 768px) {
+  .sub-title--lighter {
+    font-size: clamp(1.25rem, 3vw, 2.1rem);
+    font-family: "Haarlem";
+  }
+}
+
+@media (max-width: 2024px) and (min-width: 769px) {
+  .sub-title--lighter {
+    font-size: clamp(1.75rem, 3vw, 2.1rem);
+    font-family: "Haarlem";
+  }
+}
+
 .sub-title--lighter--bull {
-  font: calc(10px + 1.4vw) Haarlem Deco DEMO;
   color: #E59215;
 }
 
@@ -67,30 +109,33 @@
 }
 
 .sub-title {
-  font: calc(18px + 1.1vw) Haarlem Deco DEMO;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-family: "Haarlem";
   color: #1A6106;
 }
 
 @media (max-width: 768px) {
   .sub-title {
-    font: calc(18px + 1.1vw) Haarlem Deco DEMO;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-family: "Haarlem";
   }
 }
 
 @media (max-width: 2024px) and (min-width: 769px) {
   .sub-title {
-    font: calc(18px + 1.1vw) Haarlem Deco DEMO;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-family: "Haarlem";
   }
 }
 
 .title {
-  font: 7vw Vintage;
+  font: 7vw "Vintage";
   color: #05482F;
 }
 
 @media (max-width: 768px) {
   .title {
-    font: 10vw Vintage;
+    font: 10vw "Vintage";
     line-height: 0.7;
   }
 }
@@ -104,7 +149,7 @@
 
 @media (max-width: 768px) {
   .content-box__search label {
-    font: calc(10px + 0.9vw) Calibri;
+    font: clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
   }
 }
 
@@ -116,7 +161,7 @@
   margin-left: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  font: calc(12px + 0.6vw) Haarlem Deco DEMO;
+  font: clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -167,26 +212,21 @@
 }
 
 .button__player--match-list {
-  font: calc(14px + 0.9vw) Vintage;
+  font: clamp(1.75rem, 3vw, 2.1rem) "Haarlem";
   background: transparent -webkit-gradient(linear, left top, left bottom, from(#5CD23A), to(#2E691D)) 0% 0% no-repeat padding-box;
   background: transparent linear-gradient(180deg, #5CD23A 0%, #2E691D 100%) 0% 0% no-repeat padding-box;
   color: white;
-  margin-block: 2rem;
+  margin-block: 5rem;
 }
 
 .button__player--sum, .button__player--info {
-  font: calc(12px + 0.9vw) Haarlem Deco DEMO;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-family: "Haarlem";
   background: transparent -webkit-gradient(linear, left bottom, left top, from(#d5dfd3), to(#6b706a)) 0% 0% no-repeat padding-box;
   background: transparent linear-gradient(0deg, #d5dfd3 0%, #6b706a 100%) 0% 0% no-repeat padding-box;
   color: white;
   padding: 0.5em;
   margin-bottom: 2em;
-}
-
-@media (max-width: 819px) {
-  .button__player--sum, .button__player--info {
-    font: calc(11px + 0.9vw) Haarlem Deco DEMO;
-  }
 }
 
 .content__player--match {
@@ -207,7 +247,7 @@
 }
 
 .button__player--match {
-  font: calc(12px + 0.9vw) Haarlem Deco DEMO;
+  font: 18px "Haarlem";
   color: white;
   padding: 0.5em;
 }
@@ -241,6 +281,7 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 80vw;
+  margin-top: 4vw !important;
   margin: auto !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -264,7 +305,7 @@
   margin-inline: 0.4em;
   margin-top: 0.4rem;
   border: none;
-  font: calc(12px + 0.6vw) Haarlem Deco DEMO;
+  font: clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -329,14 +370,14 @@
 }
 
 .button.button__carousel {
-  font: calc(12px + 0.6vw) Haarlem Deco DEMO;
+  font: clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
   background: transparent -webkit-gradient(linear, left top, left bottom, from(#5CD23A), to(#2E691D)) 0% 0% no-repeat padding-box !important;
   background: transparent linear-gradient(180deg, #5CD23A 0%, #2E691D 100%) 0% 0% no-repeat padding-box !important;
   color: white;
 }
 
 .button.button__carousel--affiche {
-  font: calc(12px + 0.6vw) Haarlem Deco DEMO;
+  font: clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
 }
 
 .carousel {
@@ -365,8 +406,6 @@
 
 .imgAffiche {
   height: 28vh;
-  width: 31vw;
-  max-width: 180px;
   border-radius: 8px;
   margin-inline: .2rem;
   cursor: pointer;
@@ -389,6 +428,12 @@
           transform: translate(-50%, -50%) scale(0.5);
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
+}
+
+@media (max-width: 767px) {
+  .full-affiche {
+    height: 50% !important;
+  }
 }
 
 .full-affiche.open {
@@ -417,10 +462,17 @@
 
 .input {
   border-radius: 25px !important;
-  font: 14px Calibri !important;
+  font: 14px "Calibri" !important;
   width: -webkit-fit-content !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
+}
+
+@media (max-width: 599px) {
+  .input {
+    width: 25vw !important;
+    font-size: 12px !important;
+  }
 }
 
 .input-group--SearchCross {
@@ -473,6 +525,24 @@
   z-index: 1;
 }
 
+@media (max-width: 767px) {
+  .form-control {
+    padding-inline: 0 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .button {
+    margin-left: 0.8em !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .input-group--SearchCross {
+    min-width: 300px;
+  }
+}
+
 .content {
   padding: 2vw 3vw 1vw 3vw;
 }
@@ -491,7 +561,7 @@
   display: block !important;
   margin-inline: auto;
   width: 80% !important;
-  margin-block: 5vw !important;
+  margin-block: 5vw;
   max-width: 1000px !important;
 }
 
@@ -519,6 +589,26 @@
   -webkit-box-ordinal-group: 3 !important;
       -ms-flex-order: 2 !important;
           order: 2 !important;
+}
+
+.content-box--profil, .content-box--year, .content-box--bull {
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 6px solid rgba(255, 255, 255, 0.2);
+  border-left: 6px solid rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  padding: 2.5vw;
+}
+
+.content-box--profil input, .content-box--year input, .content-box--bull input {
+  -webkit-box-shadow: 3px 3px 4px black;
+          box-shadow: 3px 3px 4px black;
+}
+
+.content-box--profil input:hover, .content-box--year input:hover, .content-box--bull input:hover {
+  -webkit-box-shadow: 3px 3px 12px black;
+          box-shadow: 3px 3px 12px black;
 }
 
 .content-box--cross-search {
@@ -567,8 +657,8 @@
 }
 
 .content-box--bull {
-  padding-top: 20vw !important;
-  padding-bottom: 240px;
+  margin-top: 20vw !important;
+  margin-bottom: 240px !important;
 }
 
 @media (max-width: 768px) {
@@ -598,10 +688,6 @@
         align-content: center;
     margin-block: auto !important;
   }
-}
-
-.content-box__search.content-box__search--year {
-  margin-bottom: 6vw;
 }
 
 @media (min-width: 1025px) {
@@ -636,6 +722,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 10px;
 }
 
 .proposition_player, .proposition_player--searchCross, .proposition_player--searchBull {
@@ -660,7 +747,6 @@
 }
 
 .proposition_player--searchBull {
-  margin-left: -150px;
   margin-top: 30px;
 }
 
@@ -731,7 +817,8 @@ a {
   -webkit-box-shadow: inset 8px 8px 6px #F3EC37, 18px 18px 40px #2E2E2E;
           box-shadow: inset 8px 8px 6px #F3EC37, 18px 18px 40px #2E2E2E;
   border-radius: 15px;
-  max-width: 1200px;
+  max-width: 1000px;
+  margin-inline: auto;
   margin-bottom: 10vw;
 }
 
@@ -779,8 +866,24 @@ a {
   width: fit-content;
   padding-inline: 0.8rem;
   padding-block: 0.4rem;
-  font: 1.2rem Haarlem Deco DEMO;
   color: white;
+  font: 22px "Haarlem";
+}
+
+@media (max-width: 767px) {
+  .modal__bull--selected, .modal__bull--info, .modal__bull--match--score,
+  .modal__bull--match--tour, .modal__bull--match--year {
+    padding-inline: 6px;
+    padding-block: 4px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal__bull--selected, .modal__bull--info, .modal__bull--match--score,
+  .modal__bull--match--tour, .modal__bull--match--year {
+    font: 16px "Haarlem";
+  }
 }
 
 .grid__modal__bull img {
@@ -831,6 +934,15 @@ a {
       grid-row-start: 8;
 }
 
+@media (max-width: 767px) {
+  .modal__bull--matchList {
+    width: 80vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .modal__bull--match {
   display: -ms-grid;
   display: grid;
@@ -854,16 +966,36 @@ a {
   grid-column-end: 3;
 }
 
+@media (max-width: 599px) {
+  .modal__bull--match--tour {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    font-size: 14x;
+  }
+}
+
 .modal__bull--match--year {
   -ms-grid-column: 3;
       grid-column-start: 3;
   grid-column-end: 4;
 }
 
+@media (max-width: 599px) {
+  .modal__bull--match--year {
+    font-size: 14px;
+  }
+}
+
 .modal__bull--match--score {
   -ms-grid-column: 4;
       grid-column-start: 4;
   grid-column-end: 8;
+}
+
+@media (max-width: 599px) {
+  .modal__bull--match--score {
+    font-size: 14px;
+  }
 }
 
 .modal__filter--cross-search div {
@@ -874,7 +1006,7 @@ a {
   border-radius: 44px;
   opacity: 0.79;
   text-align: center;
-  font: 22px Haarlem Deco DEMO;
+  font: 22px "Haarlem";
   letter-spacing: 0px;
   color: #FFFFFF;
   text-shadow: 0px 3px 6px #00000029;
@@ -895,7 +1027,14 @@ a {
 
 @media (max-width: 768px) {
   .modal__filter--cross-search div p {
-    font: calc(10px + 1.4vw) Haarlem Deco DEMO;
+    font: 16px "Haarlem";
+  }
+}
+
+@media (max-width: 599px) {
+  .modal__filter--cross-search div {
+    border-radius: 5px;
+    display: block !important;
   }
 }
 
@@ -907,9 +1046,29 @@ a {
 
 .modal__matchList--cross-search .modal__match--cross-search div {
   text-align: left;
-  font: calc(10px + 0.9vw) Calibri;
+  font: 22px "Haarlem";
   letter-spacing: 0px;
   color: white;
+}
+
+@media (max-width: 767px) {
+  .modal__matchList--cross-search .modal__match--cross-search div {
+    font: 16px "Haarlem";
+  }
+}
+
+@media (max-width: 767px) {
+  .modal__matchList--cross-search .modal__match--cross-search {
+    margin: 0 !important;
+    margin-top: 5px !important;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .modal__matchList--cross-search .modal__match--cross-search--win {
@@ -922,6 +1081,22 @@ a {
   background: transparent linear-gradient(267deg, #F3EC37 0%, #E59215 49%, #F37737 100%) 0% 0% no-repeat padding-box;
   -webkit-box-shadow: inset 0px 3px 6px #F3C137, 12px 6px 4px #E59215;
           box-shadow: inset 0px 3px 6px #F3C137, 12px 6px 4px #E59215;
+}
+
+@media (max-width: 767px) {
+  .matchs_flag--searchCross {
+    margin: 0 !important;
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal__match--cross-search--year, .modal__match--cross-search--tour, .modal__match--cross-search--score, .modal__match--cross-search--name {
+    max-width: -webkit-fit-content !important;
+    max-width: -moz-fit-content !important;
+    max-width: fit-content !important;
+    padding-inline: 8px !important;
+  }
 }
 
 .modal__affiche {
@@ -944,7 +1119,7 @@ a {
 
 .modal__affiche p {
   color: white;
-  font: 1.2rem Haarlem Deco DEMO;
+  font: clamp(1.75rem, 3vw, 2.1rem) "Haarlem";
   position: absolute;
   bottom: 5%;
   left: 50%;
@@ -977,7 +1152,7 @@ a {
   background: transparent -webkit-gradient(linear, left top, left bottom, from(#F3C137), to(#F37737)) 0% 0% no-repeat padding-box;
   background: transparent linear-gradient(180deg, #F3C137 0%, #F37737 100%) 0% 0% no-repeat padding-box;
   color: #1A6106;
-  font: calc(14px + 0.9vw) Vintage;
+  font: clamp(1.75rem, 3vw, 2.1rem) "Haarlem";
 }
 
 @media (min-width: 1024px) {
@@ -987,11 +1162,18 @@ a {
   }
 }
 
+@media (max-width: 599px) {
+  .bubble__search-year__info--edition,
+  .bubble__search-year__info--tour {
+    border-radius: 5px;
+  }
+}
+
 .bubble__search-year--result {
   background: transparent -webkit-gradient(linear, left top, left bottom, from(#5CD23A), to(#2E691D)) 0% 0% no-repeat padding-box;
   background: transparent linear-gradient(180deg, #5CD23A 0%, #2E691D 100%) 0% 0% no-repeat padding-box;
   color: #F0E806;
-  font: calc(12px + 0.9vw) Haarlem Deco DEMO;
+  font: 18px "Haarlem";
 }
 
 @media (min-width: 1024px) {
@@ -1010,6 +1192,25 @@ a {
   width: 4vw !important;
   padding: 6px;
   min-width: 60px;
+  margin: auto;
+}
+
+@media (max-width: 599px) {
+  .modal__match--cross-search .matchs_flag--searchCross {
+    min-width: 30px !important;
+    width: 20px !important;
+    padding-inline: 1.5px !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .bubble.bubble__search-year--result {
+    border-radius: 5px;
+    padding: 0;
+  }
 }
 
 .card {
@@ -1041,7 +1242,7 @@ a {
 }
 
 .card__profile__info--name {
-  font: 1.2rem Haarlem Deco DEMO;
+  font: clamp(1.75rem, 3vw, 2.1rem) "Haarlem";
   padding-top: 2rem;
   padding-left: 2.5rem;
   display: -ms-grid !important;
@@ -1055,8 +1256,12 @@ a {
 
 .card__profile__info--prenom {
   padding: 0.5rem 3.5rem;
-  display: -ms-grid !important;
-  display: grid !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-grid-column: 1 !important;
       grid-column-start: 1 !important;
   grid-column-end: 3 !important;
@@ -1163,19 +1368,31 @@ a {
 .card__profile__result {
   display: inline;
   color: #E59215;
-  font: calc(10px + 0.9vw) Calibri;
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem) !important;
+  font-family: Calibri;
   font-weight: 800;
+  text-shadow: 1px 1px 1px #1A6106;
 }
 
 .card__profile__label {
-  font: calc(12px + 0.9vw) Haarlem Deco DEMO;
+  font-size: clamp(0.8rem, 1.6vw, 1.6rem);
+  font-family: Calibri;
+  text-shadow: 1px 1px 2px black;
   color: #fff;
   font-weight: 600;
 }
 
 .card__profile__label--info {
-  font: calc(14px + 0.9vw) Vintage;
+  font-family: "Vintage";
+  font-size: clamp(1.25rem, 3vw, 2.1rem);
   color: #F05606;
+  text-shadow: 1px 1px 1px #05482F;
+}
+
+.flagProfile {
+  width: 25%;
+  min-width: 20px;
+  margin-right: 20px;
 }
 
 .footer {
@@ -1188,13 +1405,13 @@ a {
 .footer li {
   list-style: none;
   color: white;
-  font: 10px calibri;
+  font: 10px "Calibri";
   cursor: pointer;
 }
 
 .footer__item--copyright {
   color: white;
-  font: 10px calibri;
+  font: 10px "Calibri";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1256,7 +1473,7 @@ a {
 
 @media (max-width: 2023px) and (min-width: 1025px) {
   .header__slogan {
-    width: 100% !important;
+    width: 50% !important;
   }
 }
 
@@ -1277,6 +1494,10 @@ a {
             justify-content: center;
     margin: auto !important;
   }
+}
+
+.input-group--SearchCross {
+  font: 15px Calibri !important;
 }
 
 .wave {
@@ -1423,11 +1644,23 @@ a {
   margin-block: auto;
 }
 
+@media (max-width: 599px) {
+  .resultat__match--name {
+    font-size: 13px !important;
+  }
+}
+
 .resultat__match--score {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
+}
+
+@media (max-width: 599px) {
+  .resultat__match--score {
+    font-size: 9px !important;
+  }
 }
 
 .resultat__match--flag {
@@ -1450,7 +1683,7 @@ body {
 }
 
 p {
-  font: calc(10px + 0.9vw) Calibri;
+  font: clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
 }
 
 .title-welcome {
@@ -1468,15 +1701,17 @@ p {
 @media (max-width: 2024px) and (min-width: 1025px) {
   .title-welcome {
     margin-left: 30% !important;
-    margin-top: 8% !important;
   }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
   .title-welcome {
     margin-left: 10% !important;
-    margin-top: 20% !important;
   }
+}
+
+.container {
+  max-width: 100% !important;
 }
 
 @media (max-width: 768px) {
@@ -1486,10 +1721,11 @@ p {
 }
 
 .text-welcome {
-  margin-left: 60%;
   position: relative;
   text-align: center;
-  margin-top: 2%;
+  width: 60vw;
+  padding: 2vw;
+  margin-left: auto;
 }
 
 .text-welcome div {
@@ -1504,13 +1740,7 @@ p {
 
 @media (max-width: 2024px) and (min-width: 1025px) {
   .text-welcome {
-    margin-left: 30% !important;
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
-  .text-welcome {
-    margin-left: 0;
+    margin-left: 30%;
   }
 }
 
@@ -1639,6 +1869,15 @@ p {
   margin-top: calc(-160px + (50vw * 0.1) - 10vw);
   height: 150px;
   position: absolute;
+}
+
+@media (max-width: 599px) {
+  .eiffelTower__searchYear {
+    margin: 0 !important;
+    top: 5%;
+    left: 70%;
+    height: 100px;
+  }
 }
 
 .col-2 {
@@ -1989,6 +2228,13 @@ p {
   width: 200px;
 }
 
+@media (max-width: 599px) {
+  .eiffelTower__search-profile {
+    width: 80px;
+    margin-top: -200px;
+  }
+}
+
 .eiffelwrapper {
   width: calc(min(80vw, 900px)) !important;
   -webkit-box-pack: center !important;
@@ -2021,7 +2267,7 @@ p {
   display: -ms-flexbox;
   display: flex;
   margin: auto;
-  width: 80vw !important;
+  width: 90vw !important;
   max-width: 900px;
   -webkit-box-pack: space-evenly !important;
       -ms-flex-pack: space-evenly !important;
@@ -2030,13 +2276,6 @@ p {
 
 .filter {
   cursor: pointer;
-}
-
-.grid__search-player {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[8];
-      grid-template-columns: repeat(8, 1fr);
 }
 
 .button.button__player {

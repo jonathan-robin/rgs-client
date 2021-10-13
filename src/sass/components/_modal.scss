@@ -13,7 +13,8 @@
     background:$bull__modal--linear-background; 
     box-shadow:$bull__modal--box-shadow; 
     border-radius:15px;
-    max-width:1200px;
+    max-width:1000px;
+    margin-inline:auto;
     margin-bottom:10vw;
     img{ 
         position:absolute;
@@ -21,6 +22,7 @@
         margin-left:1.6rem;
         margin-top:1rem;
     }
+
 }
 .grid__modal__bull{
     display:grid;
@@ -48,8 +50,17 @@
         width:fit-content;
         padding-inline:0.8rem;
         padding-block:0.4rem;
-        font:$subTitle-font--rem;
+        // font:$subTitle-font--rem;
         color:white;
+        @include media('<tablet'){ 
+            padding-inline:6px; 
+            padding-block:4px; 
+            border-radius:6px;
+        }
+        @include media('<tablet'){ 
+            font:$subTitle-lighter-font--mobile;
+        }
+        font:$subTitle-lighter-font;
 }
 //image taureau
 .grid__modal__bull img{
@@ -87,8 +98,14 @@
     grid-column-start:2; 
     grid-column-end:8; 
     grid-row-start:8;
+    @include media('<tablet'){
+        width:80vw;
+        justify-content: center;
+    }
 }
 .modal__bull--match{ 
+
+
     display: grid;
     grid-template-columns:repeat(6, 1fr);
     border-radius:15px;
@@ -98,21 +115,36 @@
     margin-bottom:1rem;
     justify-content: space-around;
     padding-block:0.2rem;
+
+    // @include media('<tablet'){
+    //     width:80vw;
+    //     justify-content: center;
+    // }
 }
 //resultat match TOUR
 .modal__bull--match--tour{
     grid-column-start:2; 
     grid-column-end:3; 
+    @include media('<bigPhone'){
+        grid-column-start:1; 
+        font-size:14x;
+    }
 }
 //resultat match YEAR
 .modal__bull--match--year{
     grid-column-start:3; 
     grid-column-end:4;
+    @include media('<bigPhone'){
+        font-size:14px;
+    }
 }
 //resultat match SCORE
 .modal__bull--match--score{
     grid-column-start:4; 
     grid-column-end:8;
+    @include media('<bigPhone'){
+        font-size:14px;
+    }
 }
 .modal__filter--cross-search{
     div{
@@ -135,6 +167,10 @@
                 font:$subTitle-lighter-font--mobile
             }
         }
+        @include media('<bigPhone'){
+            border-radius:5px;
+            display:block !important; 
+        }
     }
 }
 .modal__matchList--cross-search{
@@ -144,9 +180,19 @@
         border-radius:44px;
         div{
             text-align:left; 
-            font:$text-font--mobile; 
+            @include media('<tablet'){ 
+                font:$subTitle-lighter-font--mobile;
+            }
+            font:$subTitle-lighter-font;
             letter-spacing: 0px;
             color:white;
+        }
+        @include media('<tablet'){
+            margin:0 !important; 
+            margin-top:5px !important;
+            border-radius:5px;
+            display:flex;
+            justify-content:center;
         }
     }
     .modal__match--cross-search--win{
@@ -156,6 +202,18 @@
     .modal__match--cross-search--loose{
         background:$green-linear__Match--defaite; 
         box-shadow:$boxShadow__Match--defaite;
+    }
+}
+.matchs_flag--searchCross{ 
+    @include media('<tablet'){
+        margin:0 !important;
+        max-height:40px;
+    }
+}
+.modal__match--cross-search--year, .modal__match--cross-search--tour, .modal__match--cross-search--score, .modal__match--cross-search--name{
+    @include media('<tablet'){ 
+        max-width:fit-content !important;
+        padding-inline:8px !important;
     }
 }
 .modal__affiche{

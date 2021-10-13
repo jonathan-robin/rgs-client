@@ -26,7 +26,7 @@
         line-height:0.8;
     }
     @include media('<desktop', '>laptop'){
-        width:100%!important;
+        width:50%!important;
     }
     margin-left:20vw;
 }
@@ -40,4 +40,7 @@
         justify-content: center;
         margin:auto !important;
     }
+}
+.input-group--SearchCross{
+    font:15px Calibri !important;
 }

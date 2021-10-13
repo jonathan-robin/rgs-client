@@ -23,6 +23,9 @@
     @include media('>=laptop'){
         font:28px Vintage;
     }
+    @include media('<bigPhone'){
+        border-radius:5px;
+    }
 }
 .bubble__search-year--result{
     background:$green-linear__Button;
@@ -40,7 +43,22 @@
     width:4vw !important;
     padding:6px;
     min-width:60px;
+    margin:auto;
+
+}
+.modal__match--cross-search .matchs_flag--searchCross{
+    @include media('<bigPhone'){
+        min-width:30px !important;
+        width:20px !important;
+        padding-inline:1.5px !important;
+        display:flex;
+    }
 }
 // .second:first-child{
 //     height:
 // }
+.bubble.bubble__search-year--result{
+    @include media('<=bigPhone'){
+        border-radius:5px;
+        padding:0; 
+}}

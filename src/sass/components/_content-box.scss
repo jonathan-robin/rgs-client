@@ -6,12 +6,13 @@
 }
 
 .content-box{
+   
     text-align:center;
     &.content-box--year, &.content-box--profil, &.content-box--bull{
         display:block !important; 
         margin-inline:auto;
         width:80% !important;
-        margin-block:5vw !important;
+        margin-block:5vw;
         max-width:1000px !important;
         @include media('>laptop'){
             display:flex !important; 
@@ -31,6 +32,21 @@
         order:2 !important;
     }
 } 
+
+.content-box--profil, .content-box--year, .content-box--bull{
+    background:rgba(255,255,255,0.1);
+    border-top:6px solid rgba(255,255,255,0.2);
+    border-left:6px solid rgba(255,255,255,0.2);
+    box-shadow:4px 4px 8px rgba(0,0,0,0.5);
+    border-radius:30px;
+    padding:2.5vw;
+    input{
+        box-shadow:3px 3px 4px black ;
+        &:hover{
+            box-shadow:3px 3px 12px black ;
+        }
+    }
+}
 .content-box--cross-search{ 
     display: flex;
     justify-content: flex-end;
@@ -58,8 +74,8 @@
     width:90%;
 }
 .content-box--bull{ 
-    padding-top:20vw !important;
-    padding-bottom:240px;
+    margin-top:20vw !important;
+    margin-bottom:240px !important;
     @include media('<=tablet'){
         margin-left:2vh;
     }
@@ -79,7 +95,6 @@
     }
 }
 .content-box__search.content-box__search--year{
-    margin-bottom:6vw;
     @include media('>laptop'){
         padding-left:-2vw;
         padding-top:40px;
@@ -100,6 +115,7 @@
 }
 .content-box__search.content-box__search--slider{
     justify-content: center;
+    margin-top:10px;
 }
 
 
@@ -126,7 +142,6 @@
     display: none;
   }
   .proposition_player--searchBull{
-      margin-left:-150px;
       margin-top:30px;
   }
   /* Hide scrollbar for IE, Edge and Firefox */

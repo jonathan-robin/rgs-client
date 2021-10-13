@@ -1,4 +1,18 @@
 
+@font-face {
+    font-family: "Vintage";
+    src: url("./fonts/Vintage.ttf");
+
+}
+@font-face {
+    font-family: "Haarlem";
+    src:url('./fonts/Haarlem.ttf')
+}
+@font-face {
+    font-family: "Calibri";
+    src:url('./fonts/Carlito-Regular.ttf')
+}
+
 //Colors
 $green--darker: #05482F;
 $green--dark: #1A6106;
@@ -34,32 +48,32 @@ $bull__modal--match--result--box-shadow:inset 0px 3px 6px #F3C137, 2px 2px 2px #
 //Font
 $text-font--line-height:0.8;
 
-$title-font:7vw Vintage;
-$subTitle-font:3.5vw Haarlem Deco DEMO;
-$text-font:2.5vw Calibri;
-$smallText-font:10px Haarlem Deco DEMO;
-$inputText-font:14px Calibri;
-$buttonText-font:calc(12px + 0.6vw) Haarlem Deco DEMO;
+$title-font:7vw "Vintage";
+$subTitle-font:3.5vw "Haarlem";
+$text-font:clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
+$smallText-font:10px "Haarlem";
+$inputText-font:14px  "Calibri";
+$buttonText-font:clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
 
-$subTitle-lighter-font:22px Haarlem Deco DEMO;
-$smallerText-font:10px calibri;
+$subTitle-lighter-font:22px "Haarlem";
+$smallerText-font:10px "Calibri";
 
 //Font mobile 
-$title-font--mobile:10vw Vintage;
-$smallText-font--mobile:calc(12px + 1.1vw) Haarlem Deco DEMO;
-$subTitle-font--mobile:calc(18px + 1.1vw) Haarlem Deco DEMO;
-$text-font--mobile:calc(10px + 0.9vw) Calibri;
-$subTitle-lighter-font--mobile:calc(10px + 1.4vw) Haarlem Deco DEMO;
-$title-font--bubble:calc(14px + 0.9vw) Vintage;
-$subTitle-font--bubble:calc(12px + 0.9vw) Haarlem Deco DEMO;
+$title-font--mobile:10vw "Vintage";
+$smallText-font--mobile:calc(12px + 1.1vw) "Haarlem";
+$subTitle-font--mobile:clamp(1.75rem, 3vw, 2.1rem) "Haarlem"; 
+$text-font--mobile:clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
+$subTitle-lighter-font--mobile:16px "Haarlem";
+$title-font--bubble:clamp(1.75rem, 3vw, 2.1rem) "Haarlem";
+$subTitle-font--bubble:18px "Haarlem";
 
 //Font rem
 // $title-font--rem:1rem Vintage;
 // $smallText-font--mobile:calc(12px + 1.1vw) Haarlem Deco DEMO;
-$subTitle-font--rem:1.2rem Haarlem Deco DEMO;
-$text-font--rem:1.1rem Calibri;
+$subTitle-font--rem:clamp(1.75rem, 3vw, 2.1rem) "Haarlem";
+$text-font--rem:clamp(1.2rem, 1.7vw, 1.7rem) "Calibri";
 // $subTitle-lighter-font--mobile:calc(10px + 1.4vw) Haarlem Deco DEMO;
-$title-font--rem:1.8rem Vintage;
+$title-font--rem:1.8rem "Vintage";
 // $subTitle-font--bubble:calc(12px + 0.9vw) Haarlem Deco DEMO;
 
 //Shadow 

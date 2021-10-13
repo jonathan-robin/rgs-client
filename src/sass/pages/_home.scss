@@ -16,12 +16,15 @@ p{
     }
         @include media('<=desktop', '>laptop'){
         margin-left:30% !important;
-        margin-top:8% !important;
+        // margin-top:8% !important;
     }
     @include media('<=laptop', '>tablet'){
         margin-left:10% !important;
-        margin-top:20% !important;
+        // margin-top:20% !important;
     }
+}
+.container{ 
+    max-width:100% !important;
 }
 .title--welcome{
     @include media('<=tablet'){
@@ -29,22 +32,23 @@ p{
     }
 }
 .text-welcome{
-    margin-left:60%;
     position:relative;
     text-align:center;
-    margin-top:2%;
+    width:60vw; 
+    padding:2vw;
+    margin-left:auto;
     div{
         margin-top:3%;
     }
     @include media('<=tablet'){
-        margin-left:25vw;
+        margin-left:25vw ;
     }
     @include media('<=desktop', '>laptop'){
-        margin-left:30% !important;
+        margin-left:30% ;
     }
-    @include media('<=laptop', '>tablet'){
-        margin-left:0;
-    }
+    // @include media('<=laptop', '>tablet'){
+    //     margin-left:0;
+    // }
 }
 .sub-title--welcome{
     @include media('<=tablet'){

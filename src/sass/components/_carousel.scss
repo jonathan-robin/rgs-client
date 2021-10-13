@@ -16,8 +16,8 @@
 }
 .imgAffiche{
     height:28vh;
-    width:31vw;
-    max-width:180px;
+    // width:31vw;
+    // max-width:180px;
     border-radius:8px;
     margin-inline:.2rem;
     cursor:pointer;
@@ -32,8 +32,14 @@
     top:50%; 
     left:50%; 
     height:70%; 
+    // width:40vw;
     transform:translate(-50%, -50%) scale(0.5);
     transition:all 0.25s ease-out;
+    @include media('<tablet'){ 
+        // width:200px;
+        height:50% !important;
+    }
+
 }
 .full-affiche.open{ 
     transform:translate(-50%, -50%) scale(1);

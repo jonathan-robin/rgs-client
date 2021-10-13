@@ -27,6 +27,9 @@
     overflow-y:hidden !important;
     max-height:21px;
     margin-block:auto;
+    @include media('<bigPhone'){
+        font-size:13px !important;
+    }
     // justify-content: center;
     // text-align: center;
 }
@@ -34,6 +37,9 @@
     // margin-left:calc(min(30px, 2vw)) !important;
     justify-content: center;
     margin:auto;
+    @include media('<bigPhone'){
+        font-size:9px !important;
+    }
 }
 
 .resultat__match--flag{ 

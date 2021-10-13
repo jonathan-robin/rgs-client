@@ -20,10 +20,16 @@ export default function CardPlayer(props:{className:string, profil:Profil}){
             <img src={require('../../resources/Home/eiffel_tower.svg.svg').default} className="eiffelTower__search-profile" />
       </div>
           <div className="card__profile--grid">
-              <div className="card__profile__label--info card__profile__info--name">{props.profil.nom_joueur}</div>
-              <div className="card__profile__label--info card__profile__info--prenom">{props.profil.prenom_joueur}</div>
-              <div className="card__profile__label--info card__profile__info--drapeau">{props.profil.nat_joueur}</div>
-              <div className="card__profile__label--info card__profile__info--photo"> <img src={require('../../resources/Search-Profile/cat.jpg').default} /></div>
+              <div className="card__profile__label--info card__profile__info--name">
+                  {props.profil.nom_joueur}</div>
+              <div className="card__profile__label--info card__profile__info--prenom">
+              <img src={require('../../resources/flags/'+props.profil.nat_joueur+".png").default} className="flagProfile" />
+                  {props.profil.prenom_joueur} 
+              </div>
+              {/* <div className="card__profile__label--info card__profile__info--drapeau">
+            </div> */}
+              <div className="card__profile__label--info card__profile__info--photo"> 
+              <img src={require('../../resources/Search-Profile/cat.jpg').default} /></div>
               <div className="card__profile__label card__profile__label--first-time">DEBUT PARTICIPATION <p className="card__profile__result card__profile__result--first-time">{props.profil.premiere_participation}</p></div>
               <div className="card__profile__label card__profile__label--last-time">FIN PARTICIPATION <p className="card__profile__result card__profile__result--last-time">{props.profil.derniere_participation}</p></div>
               <div className="card__profile__label card__profile__label--number-time">PARTICIPATION <p className="card__profile__result card__profile__result--number-time">{props.profil.participation.length}</p></div>

@@ -51,12 +51,15 @@
     font:$title-font--bubble;
     background:$green-linear__Button;
     color:white;
-    margin-block:2rem;
+    margin-block:5rem;
 }
 .button__player--sum, .button__player--info{
-    font:$subTitle-font--bubble ;
+    // font:$subTitle-font--bubble ;
+    font-size:clamp(1.25rem, 3vw, 1.6rem) ;
+    font-family: "Haarlem";
     @include media('<draw-6'){
-        font:calc(11px + 0.9vw) Haarlem Deco DEMO;
+        // font:calc(11px + 0.9vw) Haarlem Deco DEMO;
+
     }
     background:$gray-linear__Button;
     color:white;
@@ -106,6 +109,7 @@
     display:flex;
     flex-wrap: wrap;
     width:80vw;
+    margin-top:4vw !important;
     @media screen and (min-width:900px){ 
         width:calc(min(80vw, 900px));
     }

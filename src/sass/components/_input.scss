@@ -2,6 +2,10 @@
     border-radius: 25px !important;
     font:$inputText-font !important;
     width:fit-content !important;
+    @include media('<bigPhone'){
+        width:25vw !important; 
+        font-size:12px !important;
+    }
 }
 .input-group--SearchCross{ 
     display:block !important;
@@ -42,4 +46,19 @@
     color: $green--darker;
     font-size: 14px;
     z-index: 1;
+  }
+  .form-control{ 
+      @include media('<tablet'){
+          padding-inline:0 !important;
+      }
+  }
+  .button{
+      @include media('<tablet'){
+          margin-left:0.8em !important;
+      }
+  }
+  .input-group--SearchCross{
+      @include media('<tablet'){
+          min-width:300px;
+      }
   }
