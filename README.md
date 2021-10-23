@@ -1,7 +1,7 @@
 # RG STATS
 Client-side of a web API that displays any male tennis match played at the French Open, Roland Garros, since 1968.
 
-<p align=center>![rgstats](https://user-images.githubusercontent.com/63792769/138564203-a02e7ea1-8e80-4e26-adb9-109766c5da7e.gif)</p>
+<img align=center>![rgstats](https://user-images.githubusercontent.com/63792769/138564203-a02e7ea1-8e80-4e26-adb9-109766c5da7e.gif)</img>
 
 The website allows you to search between 4 filters ;
 - Any complete draw from 1968 to 2019.
