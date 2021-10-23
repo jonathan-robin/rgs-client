@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# RG STATS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Client-side of a web API that displays any male tennis match played at the French Open, Roland Garros, since 1968.
 
-## Available Scripts
+The website allows you to search between 4 filters ;
+- Any complete draw from 1968 to 2019.
+- Players profile with statistics and every match played. 
+- Select a player and add filters (year, round)
+- Pet peeve
 
-In the project directory, you can run:
+Link to the [live version](https://api-rgstats.jonathan-robin.com).\
+Link to the [server-side](https://github.com/jonathan-robin/rgs-api.git).
 
-### `yarn start`
+### Built with 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[React.js](https://fr.reactjs.org/)\
+[Bootstrap](https://getbootstrap.com/)\
+[Sass](https://sass-lang.com)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting started
+This is a project built with creat-react-app.
 
-### `yarn test`
+### Prerequisities & installation
+Once the repo clone with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/jonathan-robin/rgs-client.git
+```
+if not already installed, install npm 
+```
+npm install npm@latest -g
+```
+then install the project packages
+```
+npm install
+```
+To run the app locally, run 
+```
+npm start
+```
 
-### `yarn build`
+## Contributing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Any contributions you make are greatly appreciated.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Fork the Project\
+Create your Feature Branch (```git checkout -b feature/AmazingFeature```)\
+Commit your Changes (```git commit -m 'Add some AmazingFeature'```)\
+Push to the Branch (```git push origin feature/AmazingFeature```)\
+Open a Pull Request
+## Contact
+Jonathan ROBIN - contact@jonathan-robin.com\
+https://www.jonathan-robin.com \
+https://www.github.com/jonathan-robin
