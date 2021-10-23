@@ -1,4 +1,5 @@
 # RG STATS
+![rgstats](https://user-images.githubusercontent.com/63792769/138564203-a02e7ea1-8e80-4e26-adb9-109766c5da7e.gif)
 
 Client-side of a web API that displays any male tennis match played at the French Open, Roland Garros, since 1968.
 
@@ -15,7 +16,8 @@ Link to the [server-side](https://github.com/jonathan-robin/rgs-api.git).
 
 [React.js](https://fr.reactjs.org/)\
 [Bootstrap](https://getbootstrap.com/)\
-[Sass](https://sass-lang.com)
+[Sass](https://sass-lang.com)![rgstats](https://user-images.githubusercontent.com/63792769/138564180-368a4890-ec38-4c7e-924b-0c1951c127b1.gif)
+
 
 ## Getting started
 This is a project built with creat-react-app.
